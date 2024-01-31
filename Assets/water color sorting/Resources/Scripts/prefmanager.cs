@@ -40,7 +40,7 @@ public class prefmanager : MonoBehaviour
     //for setting and getting hint values
     public int Gethintvalue()
     {
-        return PlayerPrefs.GetInt("hintpref", 5);
+        return PlayerPrefs.GetInt("hintpref", 3);
     }
     public void SetHintValue(int value)
     {
@@ -55,7 +55,7 @@ public class prefmanager : MonoBehaviour
 
     public int Gettubevalue()
     {
-        return PlayerPrefs.GetInt("tubepref", 5);
+        return PlayerPrefs.GetInt("tubepref", 3);
     }
     public void SettubeValue(int value)
     {

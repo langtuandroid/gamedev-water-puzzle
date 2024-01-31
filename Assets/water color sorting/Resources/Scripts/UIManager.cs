@@ -75,28 +75,28 @@ public class UIManager : MonoBehaviour
     {
         AddTube.transform.GetChild(1).gameObject.GetComponent<Text>().text = prefmanager.instance.Gettubevalue().ToString();
         hint.transform.GetChild(1).gameObject.GetComponent<Text>().text = prefmanager.instance.Gethintvalue().ToString();
-        if (prefmanager.instance.Gettubevalue() == 0)
-        {
-            AddTube.transform.GetChild(1).gameObject.SetActive(false);
-            AddTube.transform.GetChild(2).gameObject.SetActive(true);
-        }
-        else
-        {
-            AddTube.transform.GetChild(1).gameObject.SetActive(true);
-            AddTube.transform.GetChild(2).gameObject.SetActive(false);
-        }
+        // if (prefmanager.instance.Gettubevalue() == 0)
+        // {
+        //     AddTube.transform.GetChild(1).gameObject.SetActive(false);
+        //     AddTube.transform.GetChild(2).gameObject.SetActive(true);
+        // }
+        // else
+        // {
+        //     AddTube.transform.GetChild(1).gameObject.SetActive(true);
+        //     AddTube.transform.GetChild(2).gameObject.SetActive(false);
+        // }
 
 
-        if (prefmanager.instance.Gethintvalue() == 0)
-        {
-            hint.transform.GetChild(1).gameObject.SetActive(false);
-            hint.transform.GetChild(2).gameObject.SetActive(true);
-        }
-        else
-        {
-            hint.transform.GetChild(1).gameObject.SetActive(true);
-            hint.transform.GetChild(2).gameObject.SetActive(false);
-        }
+        // if (prefmanager.instance.Gethintvalue() == 0)
+        // {
+        //     hint.transform.GetChild(1).gameObject.SetActive(false);
+        //     hint.transform.GetChild(2).gameObject.SetActive(true);
+        // }
+        // else
+        // {
+        //     hint.transform.GetChild(1).gameObject.SetActive(true);
+        //     hint.transform.GetChild(2).gameObject.SetActive(false);
+        // }
 
     }
 
@@ -121,6 +121,23 @@ public class UIManager : MonoBehaviour
     public void LevelCompelete()
     {
         LevelComplete.gameObject.SetActive(true);
+        AddExtraHint();
+        AddExtraTube();
+    }
+
+    private void AddExtraHint()
+    {
+        int value = prefmanager.instance.Gethintvalue();
+        value++;
+        prefmanager.instance.SetHintValue(value);
+    }
+    
+    private void AddExtraTube()
+    {
+        int value = prefmanager.instance.Gettubevalue();
+        value++;
+        prefmanager.instance.SettubeValue(value);
+        print("Total Value" + value);
     }
          
 
@@ -161,7 +178,8 @@ public class UIManager : MonoBehaviour
         else
         {
             //Enable Some offer for User
-           WatchtubeAd.gameObject.SetActive(true);
+            print("AddTubeClick  No Tube");
+           //WatchtubeAd.gameObject.SetActive(true);
         }
         
     }
@@ -180,8 +198,8 @@ public class UIManager : MonoBehaviour
         else
         {
             // Enable Hint Offer for User
-
-            WatchHintAd.gameObject.SetActive(true);
+            print("HintClick  No Hint");
+            //WatchHintAd.gameObject.SetActive(true);
 
         }
 

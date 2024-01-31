@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
 
     public Sprite[] gameplaybg;
     public Image background;
+    public Image shopBackground;
     public Text cointext;
 
     public Sprite[] onoff;
@@ -37,6 +38,7 @@ public class MainMenuManager : MonoBehaviour
     void Update()
     {
         background.sprite = gameplaybg[PlayerPrefs.GetInt("backgroundvalue", 0)];
+        shopBackground.sprite = gameplaybg[PlayerPrefs.GetInt("backgroundvalue", 0)];
         cointext.text = prefmanager.instance.Getcoinsvalue().ToString();
 
     }
