@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using water_color_sorting.Resources.Scripts;
 
 public class UIManager : MonoBehaviour
 {
@@ -43,18 +44,18 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;  
         background.sprite  = gameplaybg[PlayerPrefs.GetInt("backgroundvalue", 0)];
 
-        coinvalue = prefmanager.instance.Getcoinsvalue();
+        coinvalue = SaveDataManager.instance.Getcoinsvalue();
         CoinsValue.text = coinvalue.ToString();
-        prefmanager.instance.SetcoinsValue(coinvalue);
-        levelno.text = "Level : " + prefmanager.instance.Getlevelsvalue();
+        SaveDataManager.instance.SetcoinsValue(coinvalue);
+        levelno.text = "Level : " + SaveDataManager.instance.Getlevelsvalue();
         //Set hint value
 
         Setaddtubeandhintvalue();
-        if (prefmanager.instance.Getlevelsvalue() > 2)
+        if (SaveDataManager.instance.Getlevelsvalue() > 2)
         {
             AddTube.SetActive(true);
         }
-        if (prefmanager.instance.Getlevelsvalue() > 2)
+        if (SaveDataManager.instance.Getlevelsvalue() > 2)
         {
             AddTube.SetActive(true);
             hint.SetActive(true);
@@ -67,14 +68,14 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CoinsValue.text = prefmanager.instance.Getcoinsvalue().ToString();
+        CoinsValue.text = SaveDataManager.instance.Getcoinsvalue().ToString();
     }
 
 
     public void Setaddtubeandhintvalue()
     {
-        AddTube.transform.GetChild(1).gameObject.GetComponent<Text>().text = prefmanager.instance.Gettubevalue().ToString();
-        hint.transform.GetChild(1).gameObject.GetComponent<Text>().text = prefmanager.instance.Gethintvalue().ToString();
+        AddTube.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManager.instance.Gettubevalue().ToString();
+        hint.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManager.instance.Gethintvalue().ToString();
         // if (prefmanager.instance.Gettubevalue() == 0)
         // {
         //     AddTube.transform.GetChild(1).gameObject.SetActive(false);
@@ -103,10 +104,10 @@ public class UIManager : MonoBehaviour
     public void SkipLevel()
     {
 
-        int levelvalue = prefmanager.instance.Getlevelsvalue();
+        int levelvalue = SaveDataManager.instance.Getlevelsvalue();
        
             levelvalue++;
-            prefmanager.instance.Setlevelsvalue(levelvalue);
+            SaveDataManager.instance.Setlevelsvalue(levelvalue);
 
           SceneManager.LoadScene("LevelSelection");
 
@@ -127,16 +128,16 @@ public class UIManager : MonoBehaviour
 
     private void AddExtraHint()
     {
-        int value = prefmanager.instance.Gethintvalue();
+        int value = SaveDataManager.instance.Gethintvalue();
         value++;
-        prefmanager.instance.SetHintValue(value);
+        SaveDataManager.instance.SetHintValue(value);
     }
     
     private void AddExtraTube()
     {
-        int value = prefmanager.instance.Gettubevalue();
+        int value = SaveDataManager.instance.Gettubevalue();
         value++;
-        prefmanager.instance.SettubeValue(value);
+        SaveDataManager.instance.SettubeValue(value);
         print("Total Value" + value);
     }
          
@@ -166,13 +167,13 @@ public class UIManager : MonoBehaviour
 
     public void AddTubeClick()
     {
-        if (prefmanager.instance.Gettubevalue() > 0)
+        if (SaveDataManager.instance.Gettubevalue() > 0)
         {
             LevelContainer.instance.Addcube();
-            int value = prefmanager.instance.Gettubevalue();
+            int value = SaveDataManager.instance.Gettubevalue();
             value--;
             print("Total Value" + value);
-            prefmanager.instance.SettubeValue(value);
+            SaveDataManager.instance.SettubeValue(value);
             Setaddtubeandhintvalue();
         }
         else
@@ -186,13 +187,13 @@ public class UIManager : MonoBehaviour
 
     public void HintClick()
     {
-        if (prefmanager.instance.Gethintvalue() > 0)
+        if (SaveDataManager.instance.Gethintvalue() > 0)
         {
             hint.gameObject.GetComponent<Button>().interactable = false;
             LevelContainer.instance.OnHintClick();
-            int value = prefmanager.instance.Gethintvalue();
+            int value = SaveDataManager.instance.Gethintvalue();
             value--;
-            prefmanager.instance.SetHintValue(value);
+            SaveDataManager.instance.SetHintValue(value);
             Setaddtubeandhintvalue();
         }
         else

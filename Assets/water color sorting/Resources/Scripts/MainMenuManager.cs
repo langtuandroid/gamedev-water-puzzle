@@ -1,118 +1,81 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuManager : MonoBehaviour
+namespace water_color_sorting.Resources.Scripts
 {
-    public bool deleteallpref;
-
-    public string privacypolicy;
- 
-
-    public Sprite[] gameplaybg;
-    public Image background;
-    public Image shopBackground;
-    public Text cointext;
-
-    public Sprite[] onoff;
-    public Image music, sound, vibration;
-
-    // Start is called before the first frame update
-    void Start()
+    public class MainMenuManager : MonoBehaviour
     {
-
-
-        if (deleteallpref == true)
+        public string PrivacyPolicywp;
+        public Sprite[] gameplayBgwp;
+        public Image backgroundwp;
+        public Image shopBackgroundwp;
+        public Text cointextwp;
+        public Sprite[] onoffwp;
+        public Image music;
+        public Image sound;
+        public Image vibration;
+    
+        private void Start()
         {
-            PlayerPrefs.DeleteAll();
+            // SaveDataManager.instance.SetHintValue(10);
+            // SaveDataManager.instance.SettubeValue(10);
+            SettingWindowInit();
         }
-     
-        // prefmanager.instance.SetHintValue(10);
-       //  prefmanager.instance.SettubeValue(10);
-        setingdialogue();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        background.sprite = gameplaybg[PlayerPrefs.GetInt("backgroundvalue", 0)];
-        shopBackground.sprite = gameplaybg[PlayerPrefs.GetInt("backgroundvalue", 0)];
-        cointext.text = prefmanager.instance.Getcoinsvalue().ToString();
-
-    }
-    public void onPLayclick()
-    {
-        SoundManager.instance.PlayButtonSOund();
-        SceneManager.LoadScene("levelselection");
-    }
-   void setingdialogue()
-    {
-        music.sprite = onoff[prefmanager.instance.Getmusicsvalue()];
-        sound.sprite = onoff[prefmanager.instance.Getsoundsvalue()]; 
-        vibration.sprite = onoff[prefmanager.instance.Getvibrationsvalue()];
-    }
-
-
-
-
-    public void onmusicclick()
-    {
-        if (prefmanager.instance.Getmusicsvalue() == 1)
+    
+        private void Update()
         {
-            prefmanager.instance.Setmusicsvalue(0);
-            music.sprite = onoff[prefmanager.instance.Getmusicsvalue()];
+            backgroundwp.sprite = gameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            shopBackgroundwp.sprite = gameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            cointextwp.text = SaveDataManager.instance.Getcoinsvalue().ToString();
+
         }
-        else
+        public void OnPLayGame()
         {
-            prefmanager.instance.Setmusicsvalue(1);
-            music.sprite = onoff[prefmanager.instance.Getmusicsvalue()];
+            SoundManager.instance.PlayButtonSOund();
+            SceneManager.LoadScene("levelselection");
         }
-        SoundManager.instance.SetMusicSource();
-    }
-
-    public void onsoundclick()
-    {
-        if (prefmanager.instance.Getsoundsvalue() == 1)
+        private void SettingWindowInit()
         {
-            prefmanager.instance.Setsoundsvalue(0);          
+            music.sprite = onoffwp[SaveDataManager.instance.Getmusicsvalue()];
+            sound.sprite = onoffwp[SaveDataManager.instance.Getsoundsvalue()]; 
+            vibration.sprite = onoffwp[SaveDataManager.instance.Getvibrationsvalue()];
         }
-        else
+    
+        public void SetMusic()
         {
-            prefmanager.instance.Setsoundsvalue(1);           
+            SaveDataManager.instance.Setmusicsvalue(SaveDataManager.instance.Getmusicsvalue() == 1 ? 0 : 1);
+            music.sprite = onoffwp[SaveDataManager.instance.Getmusicsvalue()];
+            SoundManager.instance.SetMusicSource();
         }
-        sound.sprite = onoff[prefmanager.instance.Getsoundsvalue()];
-        SoundManager.instance.SetSoundSource();
-    }
 
-    public void onvibrationclick()
-    {
-        if (prefmanager.instance.Getvibrationsvalue() == 1)
+        public void SetSound()
         {
-            prefmanager.instance.Setvibrationvalue(0);
-            vibration.sprite = onoff[prefmanager.instance.Getvibrationsvalue()];
+            SaveDataManager.instance.Setsoundsvalue(SaveDataManager.instance.Getsoundsvalue() == 1 ? 0 : 1);
+            sound.sprite = onoffwp[SaveDataManager.instance.Getsoundsvalue()];
+            SoundManager.instance.SetSoundSource();
         }
-        else
+
+        public void SetVibration()
         {
-            prefmanager.instance.Setvibrationvalue(1);
-            vibration.sprite = onoff[prefmanager.instance.Getvibrationsvalue()];
+            SaveDataManager.instance.Setvibrationvalue(SaveDataManager.instance.Getvibrationsvalue() == 1 ? 0 : 1);
+            vibration.sprite = onoffwp[SaveDataManager.instance.Getvibrationsvalue()];
         }
+        
+
+        public void ShowPrivacy()
+        {
+            Application.OpenURL(PrivacyPolicywp);
+        }
+        public void RateUSToStore()
+        {
+            Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
+        }
+
+        private void Refacfjjksj()
+        {
+            float somefloatwp = 0;
+        }
+        
     }
-
-
-
-    public void OnPrivacyclick()
-    {
-        Application.OpenURL(privacypolicy);
-    }
-    public void RateUS()
-    {
-        Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
-    }
-
-   
-
-
-
 }

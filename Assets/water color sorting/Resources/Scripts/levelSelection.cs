@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using water_color_sorting.Resources.Scripts;
 
 public class levelSelection : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class levelSelection : MonoBehaviour
     {
         //  PlayerPrefs.DeleteAll();
         background.sprite = gameplaybg[PlayerPrefs.GetInt("backgroundvalue", 0)];
-        levelvalue = prefmanager.instance.Getlevelsvalue();
+        levelvalue = SaveDataManager.instance.Getlevelsvalue();
         if (unlockalllevel == true)
         {
             levelvalue = TotalLevelsbuttons;

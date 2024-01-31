@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using water_color_sorting.Resources.Scripts;
 
 public class SoundManager : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class SoundManager : MonoBehaviour
 
     public void SetSoundSource()
     {
-        if (prefmanager.instance.Getsoundsvalue()==1)
+        if (SaveDataManager.instance.Getsoundsvalue()==1)
         {
             SoundSource.mute = false;
         }
@@ -52,7 +53,7 @@ public class SoundManager : MonoBehaviour
     }
     public void SetMusicSource()
     {
-        if (prefmanager.instance.Getmusicsvalue() == 1)
+        if (SaveDataManager.instance.Getmusicsvalue() == 1)
         {
             MusicSource.mute = false;
         }
@@ -63,7 +64,7 @@ public class SoundManager : MonoBehaviour
     }
     public void MakeVibaration()
     {
-        if (prefmanager.instance.Getvibrationsvalue() == 1)
+        if (SaveDataManager.instance.Getvibrationsvalue() == 1)
         {
             Handheld.Vibrate();
         }

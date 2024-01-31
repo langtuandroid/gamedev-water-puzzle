@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using water_color_sorting.Resources.Scripts;
 
 public class bottleshopmanager : MonoBehaviour
 {
@@ -28,9 +29,9 @@ public class bottleshopmanager : MonoBehaviour
     {
 
         //PlayerPrefs.DeleteAll();
-        coinvalue = prefmanager.instance.Getcoinsvalue();
+        coinvalue = SaveDataManager.instance.Getcoinsvalue();
         CoinsValue.text = coinvalue.ToString();
-        prefmanager.instance.SetcoinsValue(coinvalue);
+        SaveDataManager.instance.SetcoinsValue(coinvalue);
 
 
         unlockbottle();
@@ -74,11 +75,11 @@ public class bottleshopmanager : MonoBehaviour
         bottlevalues = new string(chars);
         PlayerPrefs.SetString("bottlelockfile", bottlevalues);
 
-        coinvalue = prefmanager.instance.Getcoinsvalue();
+        coinvalue = SaveDataManager.instance.Getcoinsvalue();
         coinvalue = coinvalue - Prices[Value];
         //gemsvalue = 5000;
         CoinsValue.text = coinvalue.ToString();
-        prefmanager.instance.SetcoinsValue(coinvalue);
+        SaveDataManager.instance.SetcoinsValue(coinvalue);
  
         unlockbottle();
 

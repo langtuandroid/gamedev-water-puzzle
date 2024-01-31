@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using water_color_sorting.Resources.Scripts;
 
 public class GDPRScript : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class GDPRScript : MonoBehaviour
     }
     public void OnPrivacyClick()
     {
-        string privacy = GameObject.FindObjectOfType<MainMenuManager>().privacypolicy;
+        string privacy = GameObject.FindObjectOfType<MainMenuManager>().PrivacyPolicywp;
         Application.OpenURL(privacy);
     }
 

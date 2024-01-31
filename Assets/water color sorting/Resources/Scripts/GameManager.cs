@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using water_color_sorting.Resources.Scripts;
 
 public class GameManager : MonoBehaviour
 {
@@ -108,12 +109,12 @@ public class GameManager : MonoBehaviour
     public void MakeLevelComplete()
     {
         //Increment Level Value
-        int  levelvalue = prefmanager.instance.Getlevelsvalue();
+        int  levelvalue = SaveDataManager.instance.Getlevelsvalue();
         int  levelvalue1 = PlayerPrefs.GetInt("levelvalue1", 1);
         if (levelvalue == levelvalue1)
         {
             levelvalue++;
-        prefmanager.instance.Setlevelsvalue(levelvalue);
+        SaveDataManager.instance.Setlevelsvalue(levelvalue);
        
         }
 
