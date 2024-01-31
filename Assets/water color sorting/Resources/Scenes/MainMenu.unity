@@ -13453,7 +13453,6 @@ GameObject:
   - component: {fileID: 1253968455}
   - component: {fileID: 1253968454}
   - component: {fileID: 1253968453}
-  - component: {fileID: 1253968452}
   m_Layer: 5
   m_Name: share
   m_TagString: Untagged
@@ -13481,18 +13480,6 @@ RectTransform:
   m_AnchoredPosition: {x: 192, y: -478}
   m_SizeDelta: {x: 140, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1253968452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253968450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b61d897a247af7045a393379c0dd200a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1253968453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13536,19 +13523,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1253968454}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1253968452}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnAndroidTextSharingClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1253968454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18916,7 +18891,6 @@ GameObject:
   - component: {fileID: 1661246484}
   - component: {fileID: 1661246483}
   - component: {fileID: 1661246482}
-  - component: {fileID: 1661246486}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -18957,7 +18931,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -19011,18 +18985,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1661246486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661246481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d19a35bb5f54ccd498b9df6718fcb222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1671134474
 GameObject:
   m_ObjectHideFlags: 0
@@ -24860,7 +24822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60099d2fbdb390548abc1d13ea2a5906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrivacyPolicywp: https://policies.google.com/privacy?hl=en-US
+  PrivacyPolicywp: https://www.google.com
+  RateUsLink: https://www.google.com
   gameplayBgwp:
   - {fileID: 21300000, guid: 65d8bf1535a843f4395a2db948443355, type: 3}
   - {fileID: 21300000, guid: b529c9bed47d5ff4b95398f46390042e, type: 3}

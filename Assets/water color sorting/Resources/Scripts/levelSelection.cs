@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using water_color_sorting.Resources.Scripts;
+using water_color_sorting.Resources.Scripts.UI;
 
 public class levelSelection : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class levelSelection : MonoBehaviour
         {
 
            GameObject button= Instantiate(levelbuttonprefab, SpawnArea.transform);
-            button.GetComponent<OnButtonClick>().buttonvalue = i;
+            button.GetComponent<OnButtonClick>().buttonLevelNumber = i;
             button.transform.GetChild(0).gameObject.GetComponent<Text>().text = i.ToString();
             if(i<= levelvalue)
             {

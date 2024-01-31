@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using water_color_sorting.Resources.Scripts.Managers;
 
 public class ShopManager : MonoBehaviour
 {

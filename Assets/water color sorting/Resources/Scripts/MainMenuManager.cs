@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using water_color_sorting.Resources.Scripts.Managers;
 
 namespace water_color_sorting.Resources.Scripts
 {
     public class MainMenuManager : MonoBehaviour
     {
         public string PrivacyPolicywp;
+        public string RateUsLink;
         public Sprite[] gameplayBgwp;
         public Image backgroundwp;
         public Image shopBackgroundwp;
@@ -69,7 +71,8 @@ namespace water_color_sorting.Resources.Scripts
         }
         public void RateUSToStore()
         {
-            Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
+            Application.OpenURL(RateUsLink);
+            //Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
         }
 
         private void Refacfjjksj()
