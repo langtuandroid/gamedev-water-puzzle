@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 250ec68e662bce742a18c619c58c539d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fulbo
+  fontNames:
+  - Fulbo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 507553b9f53aeb34c834a272a99e766a, type: 3}
+  - {fileID: 12800000, guid: 94b1901c6bc495947bac225b9c3470cc, type: 3}
+  - {fileID: 12800000, guid: 30f8aa9ebcdf2c440aa27565a3f72704, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
