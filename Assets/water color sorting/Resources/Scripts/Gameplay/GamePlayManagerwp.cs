@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace water_color_sorting.Resources.Scripts.Gameplay
 {
     public class GamePlayManagerwp : MonoBehaviour
     {
         private int stagewp;
-        [FormerlySerializedAs("levels")] public GameObject[] levelswp;
+        public GameObject[] levelswp;
         
         private void Start()
         {

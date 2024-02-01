@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using water_color_sorting.Resources.Scripts.Gameplay;
 using water_color_sorting.Resources.Scripts.Managers;
@@ -10,19 +9,19 @@ namespace water_color_sorting.Resources.Scripts.Levels
     public class LevelContainerwp : MonoBehaviour
     {
         public static LevelContainerwp instance = null;
-        [FormerlySerializedAs("leveldata")] public LevelsEditor leveldatawp;
-        [FormerlySerializedAs("Bottledata")] public BottleEditor Bottledatawp;
+        public LevelsEditor leveldatawp;
+        public BottleEditor Bottledatawp;
 
-        [FormerlySerializedAs("EmptyBottle")] [Header("Adding Empty Bottles")]
+        [Header("Adding Empty Bottles")]
         public GameObject EmptyBottlewp;
 
-        [FormerlySerializedAs("Grids")] [Header("For Positioning Bottles")]
+        [Header("For Positioning Bottles")]
         public GameObject[] Gridswp;
-        [FormerlySerializedAs("LineRenderer")] public LineRenderer LineRendererwp;
+        public LineRenderer LineRendererwp;
 
-        [FormerlySerializedAs("TotalFillingBottles")] [Header("Total And Filled Bottles Amount")]
+        [Header("Total And Filled Bottles Amount")]
         public int TotalFillingBottleswp;
-        [FormerlySerializedAs("CurrentfilledBottles")] public int CurrentfilledBottleswp;
+        public int CurrentfilledBottleswp;
 
         int levelvalue,bottlevalue;
         
@@ -33,10 +32,10 @@ namespace water_color_sorting.Resources.Scripts.Levels
         int bottleassigningvaluewp=0;
         int TotalBottleswp;
 
-        [FormerlySerializedAs("bottlesinuse")] [Header("Hint Values")]
+        [Header("Hint Values")]
         public List<GameObject> bottlesinusewp = new List<GameObject>();
-        [FormerlySerializedAs("Firstbottle")] public GameObject Firstbottlewp;
-        [FormerlySerializedAs("SecondBottle")] public GameObject SecondBottlewp;
+        public GameObject Firstbottlewp;
+        public GameObject SecondBottlewp;
         int firstbottlevalueValuewp;
 
    

@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace water_color_sorting.Resources.Scripts.Managers
 {
     public class BackGroundShopManagerwp : MonoBehaviour
     {
-        [FormerlySerializedAs("hover")] [Header("Selected Unselected Colors")]
+        [Header("Selected Unselected Colors")]
         public Color[] hoverswp;
 
-        [FormerlySerializedAs("CoinsValue")] public Text CoinsValuewp;
-        [FormerlySerializedAs("bg")] public GameObject[] bgwp;
-        [FormerlySerializedAs("Prices")] public int[] Priceswp;
+        public Text CoinsValuewp;
+        public GameObject[] bgwp;
+        public int[] Priceswp;
         private int currentbgvalue = 0;
         private int crownValue = 0;
         private int coinvalue;

@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace water_color_sorting.Resources.Scripts.Managers
 {
     public class ShopManagerWP : MonoBehaviour
     {
-        [FormerlySerializedAs("shopspanel")] public GameObject[] shopspanelwp;
-        [FormerlySerializedAs("Shoppanelclickbuttons")] public GameObject[] Shoppanelclickbuttonswp;
-        [FormerlySerializedAs("selectedUnselected")] public Sprite[] selectedUnselectedwp;
+        public GameObject[] shopspanelwp;
+        public GameObject[] Shoppanelclickbuttonswp;
+        public Sprite[] selectedUnselectedwp;
 
         private void SelectBgwp()
         {

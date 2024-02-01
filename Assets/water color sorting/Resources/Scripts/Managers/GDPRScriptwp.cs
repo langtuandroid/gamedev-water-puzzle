@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace water_color_sorting.Resources.Scripts.Managers
 {
     public class GDPRScriptwp : MonoBehaviour
     {
-        [FormerlySerializedAs("GDPR")] public GameObject GDPRwp;
+        public GameObject GDPRwp;
    
         void Start()
         {

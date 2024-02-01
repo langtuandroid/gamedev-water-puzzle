@@ -9,20 +9,20 @@ namespace water_color_sorting.Resources.Scripts.Levels
 {
     public class LevelSelectionwp : MonoBehaviour
     {
-        [FormerlySerializedAs("unlockalllevel")] public bool unlockalllevelwp;
-        [FormerlySerializedAs("TotalLevelsbuttons")] public int TotalLevelsbuttonswp;
-        [FormerlySerializedAs("selectedsprite")] public Sprite selectedspritewp;
+        public bool unlockalllevelwp;
+        public int TotalLevelsbuttonswp;
+        public Sprite selectedspritewp;
     
         //Scroller Position AdjustMent
-        [FormerlySerializedAs("MyScrollRect")] public ScrollRect MyScrollRectwp;
-        [FormerlySerializedAs("MyScrollContent")] public RectTransform MyScrollContentwp;
-        [FormerlySerializedAs("currentbutton")] public GameObject currentbuttonwp;
+        public ScrollRect MyScrollRectwp;
+        public RectTransform MyScrollContentwp;
+        public GameObject currentbuttonwp;
     
-        [FormerlySerializedAs("SpawnArea")] public GameObject SpawnAreawp;
-        [FormerlySerializedAs("levelbuttonprefab")] public GameObject levelbuttonprefabwp;
+        public GameObject SpawnAreawp;
+        public GameObject levelbuttonprefabwp;
 
-        [FormerlySerializedAs("gameplaybg")] public Sprite[] gameplaybgwp;
-        [FormerlySerializedAs("background")] public Image backgroundwp;
+        public Sprite[] gameplaybgwp;
+        public Image backgroundwp;
     
         private int levelvaluewp;
         

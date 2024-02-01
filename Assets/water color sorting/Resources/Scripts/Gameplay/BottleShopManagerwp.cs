@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using water_color_sorting.Resources.Scripts.Managers;
 
@@ -8,12 +7,12 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
 {
     public class BottleShopManagerwp : MonoBehaviour
     {
-        [FormerlySerializedAs("hover")] [Header("Selected Unselected Colors")]
+        [Header("Selected Unselected Colors")]
         public Color[] hoverwp;
 
-        [FormerlySerializedAs("CoinsValue")] public Text CoinsValuewp;
-        [FormerlySerializedAs("bg")] public GameObject[] bgwp;
-        [FormerlySerializedAs("Prices")] public int[] Priceswp;
+        public Text CoinsValuewp;
+        public GameObject[] bgwp;
+        public int[] Priceswp;
         private int coinvaluewp;
         private string bottlevalueswp;
         

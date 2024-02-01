@@ -17886,11 +17886,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GDPR
       objectReference: {fileID: 0}
-    - target: {fileID: 2232427049430808464, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2232427049430808465, guid: 216fc4ff1df614549921faddb31e0bcc,
         type: 3}
       propertyPath: m_Pivot.x
@@ -17900,11 +17895,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2232427049430808465, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2232427049430808465, guid: 216fc4ff1df614549921faddb31e0bcc,
         type: 3}
@@ -17996,41 +17986,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5722228694442933342, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -50.200012
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722228694442933342, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -44.200012
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722228695171126831, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5722228695361951643, guid: 216fc4ff1df614549921faddb31e0bcc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 572686240}
-    - target: {fileID: 5722228695361951643, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenPrivacy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722228695361951643, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: water_color_sorting.Resources.Scripts.Managers.LinkManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722228695457724604, guid: 216fc4ff1df614549921faddb31e0bcc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
