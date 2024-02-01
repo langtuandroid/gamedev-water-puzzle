@@ -70,7 +70,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
         //Spawning Starting Level Bottles
         private void SpawnBottleswp()
         {
-            print(levelvalue);
+            //print(levelvalue);
             if (leveldatawp.Levels[levelvalue-1].TotalNumberofBottles.Length > 4)
             {
                 SpawnInMultipleGridswp = true;
@@ -131,7 +131,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                     TotalBottleswp++;
                     bottleassigningvaluewp++;
                     bottle.gameObject.transform.parent.gameObject.SetActive(true);
-                    bottle.GetComponent<BottleControllerwp>().waterdropline = LineRendererwp;
+                    bottle.GetComponent<BottleControllerwp>().waterdroplinewp = LineRendererwp;
                 }
 
             }
@@ -147,7 +147,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                     TotalBottleswp++;
                     bottleassigningvaluewp++;
                     bottle.gameObject.transform.parent.gameObject.SetActive(true);
-                    bottle.GetComponent<BottleControllerwp>().waterdropline = LineRendererwp;
+                    bottle.GetComponent<BottleControllerwp>().waterdroplinewp = LineRendererwp;
                 }
             }
 
@@ -173,13 +173,13 @@ namespace water_color_sorting.Resources.Scripts.Levels
             for(int i = 0; i < 2; i++)
             {
                 int j = 0;
-                print("Grid Value" + Gridswp[i].transform.childCount);
+                //print("Grid Value" + Gridswp[i].transform.childCount);
                 for (j = 0; j < Gridswp[i].transform.childCount; j++)
                 {
                     // print("value of i" + i + " value of j" + j);
                     if (Gridswp[i].gameObject.transform.GetChild(j).gameObject.activeInHierarchy)
                     {
-                        Gridswp[i].gameObject.transform.GetChild(j).gameObject.transform.GetChild(0).gameObject.GetComponent<BottleControllerwp>().SetOrginalPosition();
+                        Gridswp[i].gameObject.transform.GetChild(j).gameObject.transform.GetChild(0).gameObject.GetComponent<BottleControllerwp>().SetOrginalPositionwp();
                     }
                 }
             }
@@ -199,7 +199,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
             for (int i = 0; i < 2; i++)
             {
                 int j = 0;
-                print("Grid Value" + Gridswp[i].transform.childCount);
+                //print("Grid Value" + Gridswp[i].transform.childCount);
                 for (j = 0; j < Gridswp[i].transform.childCount; j++)
                 {
                     //   print("value of i" + i + " value of j" + j);
@@ -212,8 +212,8 @@ namespace water_color_sorting.Resources.Scripts.Levels
             bool moveavailable= pickbottletoswapwp();
             if (moveavailable == true)
             {
-                Firstbottlewp.gameObject.GetComponent<BottleControllerwp>().otherbottlecontrollerref = SecondBottlewp.gameObject.GetComponent<BottleControllerwp>();
-                Firstbottlewp.gameObject.GetComponent<BottleControllerwp>().StartColorTransfer();
+                Firstbottlewp.gameObject.GetComponent<BottleControllerwp>().otherbottlecontrollerrefwp = SecondBottlewp.gameObject.GetComponent<BottleControllerwp>();
+                Firstbottlewp.gameObject.GetComponent<BottleControllerwp>().StartColorTransferwp();
             }
         }
 
@@ -238,9 +238,9 @@ namespace water_color_sorting.Resources.Scripts.Levels
         {
             for (int i = firstbottlevalueValuewp; i < bottlesinusewp.Count; i++)
             {
-                if (bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().filledwp != true && bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottle > 0 && Firstbottlewp == null)
+                if (bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().filledwp != true && bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottlewp > 0 && Firstbottlewp == null)
                 {
-                    print("first bottle Selected And Value Is" + firstbottlevalueValuewp);
+                    //print("first bottle Selected And Value Is" + firstbottlevalueValuewp);
                     Firstbottlewp = bottlesinusewp[i];
                     break;
                 }
@@ -257,23 +257,23 @@ namespace water_color_sorting.Resources.Scripts.Levels
             {
                 if (i == firstbottlevalueValuewp)
                 {
-                    print("skip that bottle");
+                   // print("skip that bottle");
                 }
                 else if (bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().filledwp != true)
                 {
 
-                    if (bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottle > 0 && bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottle < 4)
+                    if (bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottlewp > 0 && bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottlewp < 4)
                     {
-                        if (Firstbottlewp.GetComponent<BottleControllerwp>().TopColor.Equals(bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().TopColor))
+                        if (Firstbottlewp.GetComponent<BottleControllerwp>().TopColorwp.Equals(bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().TopColorwp))
                         {
 
-                            print("Second Bottle Called");
+                            //print("Second Bottle Called");
                             SecondBottlewp = bottlesinusewp[i];
                             break;
 
                         }
                     }
-                    else if (bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottle == 0)
+                    else if (bottlesinusewp[i].gameObject.GetComponent<BottleControllerwp>().numberofcolorsinbottlewp == 0)
                     {
                         SecondBottlewp = bottlesinusewp[i];
                         break;
@@ -291,14 +291,14 @@ namespace water_color_sorting.Resources.Scripts.Levels
                     Firstbottlewp = null;
                     SecondBottlewp = null;
                     firstbottlevalueValuewp++;
-                    print("Change First Bottle"+ firstbottlevalueValuewp);
+                    //print("Change First Bottle"+ firstbottlevalueValuewp);
                     pickfirstbottlewp();
                 
                 }
                 else
                 {
                     Firstbottlewp = null;
-                    print("Not found");
+                    //print("Not found");
                 }
             }
 
@@ -308,8 +308,8 @@ namespace water_color_sorting.Resources.Scripts.Levels
         void Assignbottlepropertieswp(GameObject bottle)
         {
             bottle.transform.position = bottle.transform.parent.transform.position;
-            bottle.GetComponent<BottleControllerwp>().waterdropline = LineRendererwp;
-            bottle.GetComponent<BottleControllerwp>().numberofcolorsinbottle = leveldatawp.Levels[levelvalue-1].TotalNumberofBottles[bottleassigningvaluewp].ColorsInBottle.Length;
+            bottle.GetComponent<BottleControllerwp>().waterdroplinewp = LineRendererwp;
+            bottle.GetComponent<BottleControllerwp>().numberofcolorsinbottlewp = leveldatawp.Levels[levelvalue-1].TotalNumberofBottles[bottleassigningvaluewp].ColorsInBottle.Length;
             for (int i=0;i< leveldatawp.Levels[levelvalue-1].TotalNumberofBottles[bottleassigningvaluewp].ColorsInBottle.Length; i++)
             {
                 bottle.GetComponent<BottleControllerwp>().bottlecolorswp[i] = leveldatawp.Levels[levelvalue-1].TotalNumberofBottles[bottleassigningvaluewp].ColorsInBottle[i];

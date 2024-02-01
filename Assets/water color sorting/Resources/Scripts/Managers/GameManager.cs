@@ -39,16 +39,16 @@ namespace water_color_sorting.Resources.Scripts.Managers
                         if (firstbottlewp == null)
                         {
                             firstbottlewp = hit.collider.GetComponent<BottleControllerwp>();
-                            if(firstbottlewp.GetComponent<BottleControllerwp>().filledwp == true|| firstbottlewp.GetComponent<BottleControllerwp>().numberofcolorsinbottle == 0)
+                            if(firstbottlewp.GetComponent<BottleControllerwp>().filledwp == true|| firstbottlewp.GetComponent<BottleControllerwp>().numberofcolorsinbottlewp == 0)
                             {
                                 firstbottlewp.GetComponent<BottleControllerwp>().Selectedwp = false;
-                                firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedposition();
+                                firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedpositionwp();
                                 firstbottlewp = null;
                             }
                             else
                             {                          
                                 firstbottlewp.GetComponent<BottleControllerwp>().Selectedwp = true;
-                                firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedposition();
+                                firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedpositionwp();
                             }
                         
                         }
@@ -57,21 +57,21 @@ namespace water_color_sorting.Resources.Scripts.Managers
                             if (firstbottlewp == hit.collider.GetComponent<BottleControllerwp>())
                             {
                                 firstbottlewp.GetComponent<BottleControllerwp>().Selectedwp = false;
-                                firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedposition();
+                                firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedpositionwp();
                                 firstbottlewp = null;
                             }
                             else 
                             {
                                 //  firstbottle.GetComponent<Bottlecontroller>().BottleSelectedposition();
                                 secondbottlewp = hit.collider.GetComponent<BottleControllerwp>();
-                                firstbottlewp.otherbottlecontrollerref = secondbottlewp;
-                                firstbottlewp.UpadteTopColorValues();
-                                secondbottlewp.UpadteTopColorValues();
+                                firstbottlewp.otherbottlecontrollerrefwp = secondbottlewp;
+                                firstbottlewp.UpadteTopColorValueswp();
+                                secondbottlewp.UpadteTopColorValueswp();
                                 // && secondbottle.transform.position == secondbottle.transform.GetComponent<Bottlecontroller>().Orginalposition
-                                if (secondbottlewp.fillbottlecheck(firstbottlewp.TopColor) == true)
+                                if (secondbottlewp.Fillbottlecheckwp(firstbottlewp.TopColorwp) == true)
                                 {
                                     //  firstbottle.GetComponent<Bottlecontroller>().BottleSelectedposition();
-                                    firstbottlewp.StartColorTransfer();
+                                    firstbottlewp.StartColorTransferwp();
                                     firstbottlewp = null;
                                     secondbottlewp = null;
                                 }
@@ -80,7 +80,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
                                     SoundManagerWP.instance.ErrorSoundwp();
                                     SoundManagerWP.instance.SetVibarationState();
                                     firstbottlewp.GetComponent<BottleControllerwp>().Selectedwp = false;
-                                    firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedposition();
+                                    firstbottlewp.GetComponent<BottleControllerwp>().BottleSelectedpositionwp();
                                     firstbottlewp = null;
                                     secondbottlewp = null;
                                 }
@@ -96,12 +96,12 @@ namespace water_color_sorting.Resources.Scripts.Managers
         public void MakeLevelCompletewp()
         {
             //Increment Level Value
-            int  levelvaluewp = SaveDataManagerwp.instance.Getlevelsvalue();
+            int  levelvaluewp = SaveDataManagerwp.instancewp.Getlevelsvaluewp();
             int  levelvalue1wp = PlayerPrefs.GetInt("levelvalue1", 1);
             if (levelvaluewp == levelvalue1wp)
             {
                 levelvaluewp++;
-                SaveDataManagerwp.instance.Setlevelsvalue(levelvaluewp);
+                SaveDataManagerwp.instancewp.Setlevelsvaluewp(levelvaluewp);
             }
             Invoke("EnableLevelCompeletewp", 1f);
         }

@@ -19,9 +19,9 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
         
         private void Start()
         {
-            coinvaluewp = SaveDataManagerwp.instance.Getcoinsvalue();
+            coinvaluewp = SaveDataManagerwp.instancewp.Getcoinsvaluewp();
             CoinsValuewp.text = coinvaluewp.ToString();
-            SaveDataManagerwp.instance.SetcoinsValue(coinvaluewp);
+            SaveDataManagerwp.instancewp.SetcoinsValuewp(coinvaluewp);
             UnlockBottlewp();
         }
         
@@ -52,11 +52,11 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             bottlevalueswp = new string(chars);
             PlayerPrefs.SetString("bottlelockfile", bottlevalueswp);
 
-            coinvaluewp = SaveDataManagerwp.instance.Getcoinsvalue();
+            coinvaluewp = SaveDataManagerwp.instancewp.Getcoinsvaluewp();
             coinvaluewp = coinvaluewp - Priceswp[Value];
             //gemsvalue = 5000;
             CoinsValuewp.text = coinvaluewp.ToString();
-            SaveDataManagerwp.instance.SetcoinsValue(coinvaluewp);
+            SaveDataManagerwp.instancewp.SetcoinsValuewp(coinvaluewp);
  
             UnlockBottlewp();
 

@@ -4,16 +4,18 @@ namespace water_color_sorting.Resources.Scripts.Managers
 {
     public class SaveDataManagerwp : MonoBehaviour
     {
-        public static SaveDataManagerwp instance = null;
+        public static SaveDataManagerwp instancewp = null;
 
-        int hintvalue, addcubevalue, unlockedlevelvalue, coinsvalue;
+        private int _hintvaluewp;
+        private int _addcubevaluewp;
+        private int _unlockedlevelvaluewp;
+        private int _coinsvaluewp;
 
-        
         void Awake()
         {
-            if (instance == null)
+            if (instancewp == null)
             {
-                instance = this;
+                instancewp = this;
             }
             else
             {
@@ -21,11 +23,11 @@ namespace water_color_sorting.Resources.Scripts.Managers
             }
         }
         
-        public int Gethintvalue()
+        public int Gethintvaluewp()
         {
             return PlayerPrefs.GetInt("hintpref", 3);
         }
-        public void SetHintValue(int value)
+        public void SetHintValuewp(int value)
         {
             PlayerPrefs.SetInt("hintpref", value);
         }
@@ -33,72 +35,64 @@ namespace water_color_sorting.Resources.Scripts.Managers
         
         //for getting and Setting extra cubes
 
-        public int Gettubevalue()
+        public int Gettubevaluewp()
         {
             return PlayerPrefs.GetInt("tubepref", 3);
         }
-        public void SettubeValue(int value)
+        public void SettubeValuewp(int value)
         {
             PlayerPrefs.SetInt("tubepref", value);
         }
 
-
-
-
-
         //for getting and setting coinsvalue
-        public int Getcoinsvalue()
+        public int Getcoinsvaluewp()
         {
             return PlayerPrefs.GetInt("coinsvalue", 0);
         }
-        public void SetcoinsValue(int value)
+        public void SetcoinsValuewp(int value)
         {
             PlayerPrefs.SetInt("coinsvalue", value);
         }
 
-
-
-
-
         //unlock level value container
-        public int Getlevelsvalue()
+        public int Getlevelsvaluewp()
         {
             return PlayerPrefs.GetInt("unlock", 1);
         }
-        public void Setlevelsvalue(int value)
+        public void Setlevelsvaluewp(int value)
         {
             PlayerPrefs.SetInt("unlock", value);
         }
 
         //music pref value
 
-        public int Getmusicsvalue()
+        public int Getmusicsvaluewp()
         {
             return PlayerPrefs.GetInt("musicvalue", 1);
         }
-        public void Setmusicsvalue(int value)
+        public void Setmusicsvaluewp(int value)
         {
             PlayerPrefs.SetInt("musicvalue", value);
         }
 
         //sound pref value
 
-        public int Getsoundsvalue()
+        public int Getsoundsvaluewp()
         {
             return PlayerPrefs.GetInt("soundvalue", 1);
         }
-        public void Setsoundsvalue(int value)
+        public void Setsoundsvaluewp(int value)
         {
             PlayerPrefs.SetInt("soundvalue", value);
         }
 
         //vibration pref value
 
-        public int Getvibrationsvalue()
+        public int Getvibrationsvaluewp()
         {
             return PlayerPrefs.GetInt("vibrationvalue", 1);
         }
-        public void Setvibrationvalue(int value)
+        public void Setvibrationvaluewp(int value)
         {
             PlayerPrefs.SetInt("vibrationvalue", value);
         }

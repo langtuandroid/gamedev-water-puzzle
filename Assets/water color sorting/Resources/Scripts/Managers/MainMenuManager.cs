@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using water_color_sorting.Resources.Scripts.Managers;
 
-namespace water_color_sorting.Resources.Scripts
+namespace water_color_sorting.Resources.Scripts.Managers
 {
     public class MainMenuManager : MonoBehaviour
     {
@@ -28,69 +26,40 @@ namespace water_color_sorting.Resources.Scripts
         {
             backgroundwp.sprite = gameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
             shopBackgroundwp.sprite = gameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
-            cointextwp.text = SaveDataManagerwp.instance.Getcoinsvalue().ToString();
+            cointextwp.text = SaveDataManagerwp.instancewp.Getcoinsvaluewp().ToString();
 
         }
-        public void OnPLayGame()
+        public void PLayGamewp()
         {
             SoundManagerWP.instance.PlayButtonSoundwp();
             SceneManager.LoadScene("levelselection");
         }
         private void SettingWindowInit()
         {
-            music.sprite = onoffwp[SaveDataManagerwp.instance.Getmusicsvalue()];
-            sound.sprite = onoffwp[SaveDataManagerwp.instance.Getsoundsvalue()]; 
-            vibration.sprite = onoffwp[SaveDataManagerwp.instance.Getvibrationsvalue()];
+            music.sprite = onoffwp[SaveDataManagerwp.instancewp.Getmusicsvaluewp()];
+            sound.sprite = onoffwp[SaveDataManagerwp.instancewp.Getsoundsvaluewp()]; 
+            vibration.sprite = onoffwp[SaveDataManagerwp.instancewp.Getvibrationsvaluewp()];
         }
     
-        public void SetMusic()
+        public void SetMusicwp()
         {
-            SaveDataManagerwp.instance.Setmusicsvalue(SaveDataManagerwp.instance.Getmusicsvalue() == 1 ? 0 : 1);
-            music.sprite = onoffwp[SaveDataManagerwp.instance.Getmusicsvalue()];
+            SaveDataManagerwp.instancewp.Setmusicsvaluewp(SaveDataManagerwp.instancewp.Getmusicsvaluewp() == 1 ? 0 : 1);
+            music.sprite = onoffwp[SaveDataManagerwp.instancewp.Getmusicsvaluewp()];
             SoundManagerWP.instance.SetMusicState();
         }
 
-        public void SetSound()
+        public void SetSoundwp()
         {
-            SaveDataManagerwp.instance.Setsoundsvalue(SaveDataManagerwp.instance.Getsoundsvalue() == 1 ? 0 : 1);
-            sound.sprite = onoffwp[SaveDataManagerwp.instance.Getsoundsvalue()];
+            SaveDataManagerwp.instancewp.Setsoundsvaluewp(SaveDataManagerwp.instancewp.Getsoundsvaluewp() == 1 ? 0 : 1);
+            sound.sprite = onoffwp[SaveDataManagerwp.instancewp.Getsoundsvaluewp()];
             SoundManagerWP.instance.SetSoundState();
         }
 
-        public void SetVibration()
+        public void SetVibrationwp()
         {
-            SaveDataManagerwp.instance.Setvibrationvalue(SaveDataManagerwp.instance.Getvibrationsvalue() == 1 ? 0 : 1);
-            vibration.sprite = onoffwp[SaveDataManagerwp.instance.Getvibrationsvalue()];
+            SaveDataManagerwp.instancewp.Setvibrationvaluewp(SaveDataManagerwp.instancewp.Getvibrationsvaluewp() == 1 ? 0 : 1);
+            vibration.sprite = onoffwp[SaveDataManagerwp.instancewp.Getvibrationsvaluewp()];
         }
-        
-
-//         public void ShowPrivacy()
-//         {
-//             Application.OpenURL(PrivacyPolicywp);
-//         }
-//         public void RateUSToStore()
-//         {
-//             Application.OpenURL(RateUsLink);
-//             //Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
-//         }
-//         
-//         public void ShareLink()
-//         {
-// #if UNITY_IOS
-//             new NativeShare()
-//                 .SetUrl(ShareAppLink)
-//                 .Share();
-// #elif UNITY_ANDROID
-//             new NativeShare()
-//                 .SetUrl(ShareAppLink)
-//                 .Share(); 
-// #endif
-//
-//         }
-//         private void Refacfjjksj()
-//         {
-//             float somefloatwp = 0;
-//         }
-//         
     }
 }
+

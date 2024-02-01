@@ -13,62 +13,58 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
         public  bool normalposition=true;
          
         [FormerlySerializedAs("bottlecolors")] public Color[] bottlecolorswp;
-        public SpriteRenderer bottlemaskobject;
-        public GameObject filledCapAnim;
-        public AnimationCurve ScaleandrotateMultiplayer;
-        public AnimationCurve fillamountcurve;
-        public AnimationCurve rotationspeedmultiplayer;
-        [Header("Speed Value of Bottle Rotation")]
-        public float timetorotate;
-        public float movingspeed;
-        public float[] fillamounts;
-        public float[] rotationvalues;
+        [FormerlySerializedAs("bottlemaskobject")] public SpriteRenderer bottlemaskobjectwp;
+        [FormerlySerializedAs("filledCapAnim")] public GameObject filledCapAnimwp;
+        [FormerlySerializedAs("ScaleandrotateMultiplayer")] public AnimationCurve ScaleandrotateMultiplayerwp;
+        [FormerlySerializedAs("fillamountcurve")] public AnimationCurve fillamountcurvewp;
+        [FormerlySerializedAs("rotationspeedmultiplayer")] public AnimationCurve rotationspeedmultiplayerwp;
+        [FormerlySerializedAs("timetorotate")] [Header("Speed Value of Bottle Rotation")]
+        public float timetorotatewp;
+        [FormerlySerializedAs("movingspeed")] public float movingspeedwp;
+        [FormerlySerializedAs("fillamounts")] public float[] fillamountswp;
+        [FormerlySerializedAs("rotationvalues")] public float[] rotationvalueswp;
 
-        [Range(0,4)]
-        public int numberofcolorsinbottle = 4;
+        [FormerlySerializedAs("numberofcolorsinbottle")] [Range(0,4)]
+        public int numberofcolorsinbottlewp = 4;
 
-        public Color TopColor;
-        public int numberofTopColorlayers = 1;
+        [FormerlySerializedAs("TopColor")] public Color TopColorwp;
+        [FormerlySerializedAs("numberofTopColorlayers")] public int numberofTopColorlayerswp = 1;
 
-        public BottleControllerwp otherbottlecontrollerref;
-        public bool justthisbottle;
-        private int numberofcolorstotransfer = 0;
+        [FormerlySerializedAs("otherbottlecontrollerref")] public BottleControllerwp otherbottlecontrollerrefwp;
+        [FormerlySerializedAs("justthisbottle")] public bool justthisbottlewp;
+        private int numberofcolorstotransferwp = 0;
 
         //rotaion poistion and points
-        public Transform leftrotationpoint;
-        public Transform rightrotationpoint;
-        private Transform choosenrotationpoint;
+        [FormerlySerializedAs("leftrotationpoint")] public Transform leftrotationpointwp;
+        [FormerlySerializedAs("rightrotationpoint")] public Transform rightrotationpointwp;
+        private Transform choosenrotationpointwp;
 
-        private float directionalmultiplayer = 1.0f;
+        private float directionalmultiplayerwp = 1.0f;
 
-        public LineRenderer waterdropline;
+        [FormerlySerializedAs("waterdropline")] public LineRenderer waterdroplinewp;
 
 
-        public Vector3 SelectedUpPosition;
-        public Vector3 Orginalposition;
-        public Vector3 startposition;
-        public Vector3 endposition;
+        [FormerlySerializedAs("SelectedUpPosition")] public Vector3 SelectedUpPositionwp;
+        [FormerlySerializedAs("Orginalposition")] public Vector3 Orginalpositionwp;
+        [FormerlySerializedAs("startposition")] public Vector3 startpositionwp;
+        [FormerlySerializedAs("endposition")] public Vector3 endpositionwp;
      
         int rotationindex=0;
-        private void Awake()
+       
+        private void Start()
         {
-            // Orginalposition = transform.position;
-        }
-        // Start is called before the first frame update
-        void Start()
-        {
-            bottlemaskobject.material.SetFloat("_fillamount", fillamounts[numberofcolorsinbottle]);
+            bottlemaskobjectwp.material.SetFloat("_fillamount", fillamountswp[numberofcolorsinbottlewp]);
 
-            Orginalposition =new Vector3( gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-            Invoke("SetOrginalPosition", 0.1f);
+            Orginalpositionwp =new Vector3( gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+            Invoke("SetOrginalPositionwp", 0.1f);
             //  Orginalposition = transform.position;
 
-            Updatecolors();
-            UpadteTopColorValues();
+            Updatecolorswp();
+            UpadteTopColorValueswp();
         }
-        public void SetOrginalPosition()
+        public void SetOrginalPositionwp()
         {
-            Orginalposition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+            Orginalpositionwp = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         }
         // Update is called once per frame
         void Update()
@@ -78,7 +74,7 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             // print("GameObject Position"+gameObject.transform.position);
         }
 
-        public void StartColorTransfer()
+        public void StartColorTransferwp()
         {
             normalposition = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -87,30 +83,30 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             ///  SoundManager.instance.MakeVibaration();
             //  otherbottlecontrollerref.GetComponent<BoxCollider2D>().enabled = false;
             Selectedwp = false;
-            choserotationpointanddirection();
-            numberofcolorstotransfer = Mathf.Min(numberofTopColorlayers, 4 - otherbottlecontrollerref.numberofcolorsinbottle);
-            for (int i = 0; i < numberofcolorstotransfer; i++)
+            Choserotationpointanddirectionwp();
+            numberofcolorstotransferwp = Mathf.Min(numberofTopColorlayerswp, 4 - otherbottlecontrollerrefwp.numberofcolorsinbottlewp);
+            for (int i = 0; i < numberofcolorstotransferwp; i++)
             {
-                otherbottlecontrollerref.bottlecolorswp[otherbottlecontrollerref.numberofcolorsinbottle + i] = TopColor;
+                otherbottlecontrollerrefwp.bottlecolorswp[otherbottlecontrollerrefwp.numberofcolorsinbottlewp + i] = TopColorwp;
             }
 
-            setemptyabovecolors(otherbottlecontrollerref.numberofcolorsinbottle, TopColor);
+            SetEmptyaboveColorswp(otherbottlecontrollerrefwp.numberofcolorsinbottlewp, TopColorwp);
 
-            otherbottlecontrollerref.Updatecolors();
-            calculaterotationindex(4 - otherbottlecontrollerref.numberofcolorsinbottle);
+            otherbottlecontrollerrefwp.Updatecolorswp();
+            CalculaterotationIndexwp(4 - otherbottlecontrollerrefwp.numberofcolorsinbottlewp);
             transform.GetComponent<SpriteRenderer>().sortingOrder += 2;
-            bottlemaskobject.sortingOrder += 2;
+            bottlemaskobjectwp.sortingOrder += 2;
 
-            StartCoroutine(MoveBottle());
+            StartCoroutine(MoveBottlewp());
 
         }
          
         //transforming position After Selected as first Bottle
-        public void BottleSelectedposition()
+        public void BottleSelectedpositionwp()
         {
             if (Selectedwp == true)
             {
-                StartCoroutine(MakeBottleSelected());
+                StartCoroutine(MakeBottleSelectedwp());
                 //  transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), 1f);
                 //   transform.position = Vector3.Lerp(Orginalposition, new Vector3(Orginalposition.x, Orginalposition.y + 1, Orginalposition.z), 1f);
                 //  transform.position = Vector3.Lerp(transform.parent.transform.position, new Vector3(0f, 1f, 0f), 1f);
@@ -119,7 +115,7 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             }
             else
             {
-                StartCoroutine(MakeBottleSelected());
+                StartCoroutine(MakeBottleSelectedwp());
                 //  this.gameObject.transform.position = Orginalposition;
                 //  transform.position = new Vector3(0f, 0f, 0f);
                 //StartCoroutine(MakeBottleSelected());
@@ -130,10 +126,8 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
 
 
 
-        IEnumerator MakeBottleSelected()
+        IEnumerator MakeBottleSelectedwp()
         {
-       
-
             float t = 0;
             while (t <= 1)
             {
@@ -148,11 +142,11 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             }
             else
             {
-                transform.position = Orginalposition;
+                transform.position = Orginalpositionwp;
             }
             //  normalposition = true;
             transform.GetComponent<SpriteRenderer>().sortingOrder = 2;
-            bottlemaskobject.sortingOrder = 1;
+            bottlemaskobjectwp.sortingOrder = 1;
             //      StartCoroutine(RotateBottle());
         }
 
@@ -162,50 +156,50 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
 
 
         //move bottle to other bottle
-        IEnumerator MoveBottle()
+        IEnumerator MoveBottlewp()
         {
-            startposition = transform.position;
-            if (choosenrotationpoint == leftrotationpoint)
+            startpositionwp = transform.position;
+            if (choosenrotationpointwp == leftrotationpointwp)
             {
-                endposition = otherbottlecontrollerref.rightrotationpoint.position;
+                endpositionwp = otherbottlecontrollerrefwp.rightrotationpointwp.position;
             }
             else
             {
-                endposition = otherbottlecontrollerref.leftrotationpoint.position;
+                endpositionwp = otherbottlecontrollerrefwp.leftrotationpointwp.position;
             }
             float t = 0;
             while (t <= 1)
             {
-                transform.position = Vector3.Lerp(startposition, endposition, t);
-                t += Time.deltaTime * movingspeed;
+                transform.position = Vector3.Lerp(startpositionwp, endpositionwp, t);
+                t += Time.deltaTime * movingspeedwp;
 
                 yield return new WaitForEndOfFrame();
             }
-            transform.position = endposition;
-            StartCoroutine(RotateBottle());
+            transform.position = endpositionwp;
+            StartCoroutine(RotateBottlewp());
         }
-        IEnumerator MoveBottleBack()
+        IEnumerator MoveBottleBackwp()
         {
-            startposition = transform.position;
+            startpositionwp = transform.position;
       
-            endposition = Orginalposition;
+            endpositionwp = Orginalpositionwp;
         
             float t = 0;
             while (t <= 1)
             {
-                transform.position = Vector3.Lerp(startposition, endposition, t);
-                t += Time.deltaTime * movingspeed;
+                transform.position = Vector3.Lerp(startpositionwp, endpositionwp, t);
+                t += Time.deltaTime * movingspeedwp;
 
                 yield return new WaitForEndOfFrame();
             }
-            transform.position = endposition;
+            transform.position = endpositionwp;
 
 
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            otherbottlecontrollerref.GetComponent<BoxCollider2D>().enabled = true;
+            otherbottlecontrollerrefwp.GetComponent<BoxCollider2D>().enabled = true;
             //  normalposition = true;
             transform.GetComponent<SpriteRenderer>().sortingOrder -= 2;
-            bottlemaskobject.sortingOrder -= 2;
+            bottlemaskobjectwp.sortingOrder -= 2;
             UIManager.instance.Hintwp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = true;
             UIManager.instance.AddTubewp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = true;
             //  StartCoroutine(RotateBottle());
@@ -213,18 +207,18 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
 
 
 
-        void Updatecolors()
+        void Updatecolorswp()
         {
-            bottlemaskobject.material.SetColor("_C1", bottlecolorswp[0]);
-            bottlemaskobject.material.SetColor("_C2", bottlecolorswp[1]);
-            bottlemaskobject.material.SetColor("_C3", bottlecolorswp[2]);
-            bottlemaskobject.material.SetColor("_C4", bottlecolorswp[3]);
+            bottlemaskobjectwp.material.SetColor("_C1", bottlecolorswp[0]);
+            bottlemaskobjectwp.material.SetColor("_C2", bottlecolorswp[1]);
+            bottlemaskobjectwp.material.SetColor("_C3", bottlecolorswp[2]);
+            bottlemaskobjectwp.material.SetColor("_C4", bottlecolorswp[3]);
         }
 
 
 
 
-        IEnumerator RotateBottle()
+        IEnumerator RotateBottlewp()
         {
             SoundManagerWP.instance.PlaywaterdropSoundPlaywp();
             float t = 0;
@@ -232,202 +226,195 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
 
             float lastanglevalue = 0;
 
-            while (t < timetorotate)
+            while (t < timetorotatewp)
             {
-                lerpvalue = t / timetorotate;
-                anglevalue = Mathf.Lerp(0.0f,directionalmultiplayer*rotationvalues[rotationindex], lerpvalue);
+                lerpvalue = t / timetorotatewp;
+                anglevalue = Mathf.Lerp(0.0f,directionalmultiplayerwp*rotationvalueswp[rotationindex], lerpvalue);
 
                 //transform.eulerAngles = new Vector3(0, 0, anglevalue);
-                transform.RotateAround(choosenrotationpoint.position, Vector3.forward, lastanglevalue-anglevalue);
-                bottlemaskobject.material.SetFloat("_Size", ScaleandrotateMultiplayer.Evaluate(anglevalue));
+                transform.RotateAround(choosenrotationpointwp.position, Vector3.forward, lastanglevalue-anglevalue);
+                bottlemaskobjectwp.material.SetFloat("_Size", ScaleandrotateMultiplayerwp.Evaluate(anglevalue));
 
-                if(fillamounts[numberofcolorsinbottle]> fillamountcurve.Evaluate(anglevalue))
+                if(fillamountswp[numberofcolorsinbottlewp]> fillamountcurvewp.Evaluate(anglevalue))
                 {
                
-                    if (waterdropline.enabled == false)
+                    if (waterdroplinewp.enabled == false)
                     {
-                        Debug.Log("Line renderer enabled");
-                        waterdropline.startColor = TopColor;
-                        waterdropline.endColor = TopColor;
-                        waterdropline.SetPosition(0, choosenrotationpoint.position);
-                        waterdropline.SetPosition(1, choosenrotationpoint.position-Vector3.up*20f);
-                        waterdropline.enabled = true;
+                       // Debug.Log("Line renderer enabled");
+                        waterdroplinewp.startColor = TopColorwp;
+                        waterdroplinewp.endColor = TopColorwp;
+                        waterdroplinewp.SetPosition(0, choosenrotationpointwp.position);
+                        waterdroplinewp.SetPosition(1, choosenrotationpointwp.position-Vector3.up*20f);
+                        waterdroplinewp.enabled = true;
                     }
 
-                    bottlemaskobject.material.SetFloat("_fillamount", fillamountcurve.Evaluate(anglevalue));
+                    bottlemaskobjectwp.material.SetFloat("_fillamount", fillamountcurvewp.Evaluate(anglevalue));
                     //filling up other bottle
-                    otherbottlecontrollerref.fillup(fillamountcurve.Evaluate(lastanglevalue)- fillamountcurve.Evaluate(anglevalue));
+                    otherbottlecontrollerrefwp.Fillupwp(fillamountcurvewp.Evaluate(lastanglevalue)- fillamountcurvewp.Evaluate(anglevalue));
                 }
             
-                t += Time.deltaTime * rotationspeedmultiplayer.Evaluate(anglevalue);
+                t += Time.deltaTime * rotationspeedmultiplayerwp.Evaluate(anglevalue);
                 lastanglevalue = anglevalue;
-                print(anglevalue);
+                //print(anglevalue);
                 yield return new WaitForEndOfFrame();
             }
-            anglevalue = directionalmultiplayer * rotationvalues[rotationindex];
+            anglevalue = directionalmultiplayerwp * rotationvalueswp[rotationindex];
             //   transform.eulerAngles = new Vector3(0, 0, anglevalue);
-            bottlemaskobject.material.SetFloat("_fillamount", ScaleandrotateMultiplayer.Evaluate(anglevalue));
-            bottlemaskobject.material.SetFloat("_fillamount", fillamountcurve.Evaluate(anglevalue));
+            bottlemaskobjectwp.material.SetFloat("_fillamount", ScaleandrotateMultiplayerwp.Evaluate(anglevalue));
+            bottlemaskobjectwp.material.SetFloat("_fillamount", fillamountcurvewp.Evaluate(anglevalue));
        
             //subtracting and adding values in current and other bottle
-            numberofcolorsinbottle -= numberofcolorstotransfer;
-            otherbottlecontrollerref.numberofcolorsinbottle += numberofcolorstotransfer;
-            setotherbottleexactcolorvalue();
+            numberofcolorsinbottlewp -= numberofcolorstotransferwp;
+            otherbottlecontrollerrefwp.numberofcolorsinbottlewp += numberofcolorstotransferwp;
+            Setotherbottleexactcolorvaluewp();
 
 
             //checking Other Bottle Is filled Or not
 
-            CheckOtherBottleComplete(otherbottlecontrollerref);
+            CheckOtherBottleCompletewp(otherbottlecontrollerrefwp);
 
 
-            waterdropline.enabled = false;
+            waterdroplinewp.enabled = false;
 
-            StartCoroutine(RotateBottleback());
+            StartCoroutine(RotateBottlebackwp());
         }
 
-        IEnumerator RotateBottleback()
+        IEnumerator RotateBottlebackwp()
         {
             SoundManagerWP.instance.PlaywaterdropSoundStopwp();
 
             float t = 0;
             float lerpvalue, anglevalue;
 
-            float lastanglevalue = directionalmultiplayer * rotationvalues[rotationindex];
+            float lastanglevalue = directionalmultiplayerwp * rotationvalueswp[rotationindex];
 
 
-            while (t < timetorotate)
+            while (t < timetorotatewp)
             {
-                lerpvalue = t / timetorotate;
+                lerpvalue = t / timetorotatewp;
 
-                anglevalue = Mathf.Lerp(directionalmultiplayer * rotationvalues[rotationindex], 0.0f, lerpvalue);
+                anglevalue = Mathf.Lerp(directionalmultiplayerwp * rotationvalueswp[rotationindex], 0.0f, lerpvalue);
 
                 // transform.eulerAngles = new Vector3(0, 0, anglevalue);
 
-                transform.RotateAround(choosenrotationpoint.position, Vector3.forward, lastanglevalue - anglevalue);
+                transform.RotateAround(choosenrotationpointwp.position, Vector3.forward, lastanglevalue - anglevalue);
 
-                bottlemaskobject.material.SetFloat("_Size", ScaleandrotateMultiplayer.Evaluate(anglevalue));
+                bottlemaskobjectwp.material.SetFloat("_Size", ScaleandrotateMultiplayerwp.Evaluate(anglevalue));
 
                 lastanglevalue = anglevalue;
 
                 t += Time.deltaTime;
                 yield return new WaitForEndOfFrame();
             }
-            UpadteTopColorValues();
+            UpadteTopColorValueswp();
             anglevalue = 0f;
             transform.eulerAngles = new Vector3(0, 0, anglevalue);
-            bottlemaskobject.material.SetFloat("_Size", ScaleandrotateMultiplayer.Evaluate(anglevalue));
-            StartCoroutine(MoveBottleBack());
+            bottlemaskobjectwp.material.SetFloat("_Size", ScaleandrotateMultiplayerwp.Evaluate(anglevalue));
+            StartCoroutine(MoveBottleBackwp());
         }
 
 
         //for Checking the top Color Values and Number
 
-        public void UpadteTopColorValues()
+        public void UpadteTopColorValueswp()
         {
-            if (numberofcolorsinbottle != 0)
+            if (numberofcolorsinbottlewp != 0)
             {
-                numberofTopColorlayers = 1;
-                TopColor = bottlecolorswp[numberofcolorsinbottle - 1];
-                if(numberofcolorsinbottle == 4)
+                numberofTopColorlayerswp = 1;
+                TopColorwp = bottlecolorswp[numberofcolorsinbottlewp - 1];
+                if(numberofcolorsinbottlewp == 4)
                 {
                     if (bottlecolorswp[3].Equals(bottlecolorswp[2]))
                     {
-                        numberofTopColorlayers = 2;
+                        numberofTopColorlayerswp = 2;
                         if (bottlecolorswp[2].Equals(bottlecolorswp[1]))
                         {
-                            numberofTopColorlayers = 3;
+                            numberofTopColorlayerswp = 3;
                             if (bottlecolorswp[1].Equals(bottlecolorswp[0]))
                             {
-                                numberofTopColorlayers = 4;
+                                numberofTopColorlayerswp = 4;
                             }
                         }
                     }
                 }
-                else if (numberofcolorsinbottle == 3)
+                else if (numberofcolorsinbottlewp == 3)
                 {
                     if (bottlecolorswp[2].Equals(bottlecolorswp[1]))
                     {
-                        numberofTopColorlayers = 2;
+                        numberofTopColorlayerswp = 2;
                         if (bottlecolorswp[1].Equals(bottlecolorswp[0]))
                         {
-                            numberofTopColorlayers = 3;
+                            numberofTopColorlayerswp = 3;
                        
                         }
                     }
                 }
-                else if (numberofcolorsinbottle == 2)
+                else if (numberofcolorsinbottlewp == 2)
                 {
                     if (bottlecolorswp[1].Equals(bottlecolorswp[0]))
                     {
-                        numberofTopColorlayers = 2;
+                        numberofTopColorlayerswp = 2;
                     
                     }
                 }
 
-                rotationindex = 3 - (numberofcolorsinbottle - numberofTopColorlayers);
+                rotationindex = 3 - (numberofcolorsinbottlewp - numberofTopColorlayerswp);
 
             }
         }
 
 
-        void setemptyabovecolors(int colorchangevalue,Color uppercolorvalues)
+        void SetEmptyaboveColorswp(int colorchangevalue,Color uppercolorvalues)
         {
             // print("filledfunctioncalled");
             if (colorchangevalue == 4)
             {
-                otherbottlecontrollerref.filledwp = true;
+                otherbottlecontrollerrefwp.filledwp = true;
             }
             for(int i=3;i> colorchangevalue; i--)
             {
-                otherbottlecontrollerref.bottlecolorswp[i] = uppercolorvalues;
-                otherbottlecontrollerref.TopColor = uppercolorvalues;
+                otherbottlecontrollerrefwp.bottlecolorswp[i] = uppercolorvalues;
+                otherbottlecontrollerrefwp.TopColorwp = uppercolorvalues;
             }
         }
 
         // for Checking If Other Bottle Is compeleted with Same Colors
 
-        public void CheckOtherBottleComplete(BottleControllerwp other)
+        public void CheckOtherBottleCompletewp(BottleControllerwp other)
         {
-            if (other.numberofcolorsinbottle == 4&&other.bottlecolorswp[0].Equals(other.bottlecolorswp[1])&& other.bottlecolorswp[0].Equals(other.bottlecolorswp[2])&&other.bottlecolorswp[0].Equals(other.bottlecolorswp[3]))
+            if (other.numberofcolorsinbottlewp == 4&&other.bottlecolorswp[0].Equals(other.bottlecolorswp[1])&& other.bottlecolorswp[0].Equals(other.bottlecolorswp[2])&&other.bottlecolorswp[0].Equals(other.bottlecolorswp[3]))
             {
                 other.filledwp = true;
-                other.enableotherbottlefillparticle();
+                other.Enableotherbottlefillparticlewp();
                 GameObject.FindObjectOfType<LevelContainerwp>().FillBottleAndCheckLevelCompletewp();
             }
         }
 
-
-
-
-        public void enableotherbottlefillparticle()
+        
+        public void Enableotherbottlefillparticlewp()
         {
-            filledCapAnim.SetActive(true);
+            filledCapAnimwp.SetActive(true);
             SoundManagerWP.instance.PlayconfettiSOundwp();
         }
-
-
-
-
-
-
+        
 
         //for transfering color from One Bottle to another
 
-        public bool fillbottlecheck(Color colortocheck)
+        public bool Fillbottlecheckwp(Color colortocheck)
         {
-            if (numberofcolorsinbottle == 0)
+            if (numberofcolorsinbottlewp == 0)
             {
                 return true;
             }
             else
             {
-                if (numberofcolorsinbottle == 4)
+                if (numberofcolorsinbottlewp == 4)
                 {
                     return false;
                 }
                 else
                 {
-                    if (TopColor.Equals(colortocheck))
+                    if (TopColorwp.Equals(colortocheck))
                     {
                         return true;
                     }
@@ -442,22 +429,22 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
 
 
         // Calculation rotation index again after transfering colors
-        private void calculaterotationindex(int numberofemptyspaceinsecondbottle)
+        private void CalculaterotationIndexwp(int numberofemptyspaceinsecondbottle)
         {
-            rotationindex = 3 - (numberofcolorsinbottle- Mathf.Min(numberofemptyspaceinsecondbottle, numberofTopColorlayers));
+            rotationindex = 3 - (numberofcolorsinbottlewp- Mathf.Min(numberofemptyspaceinsecondbottle, numberofTopColorlayerswp));
         }
    
 
         //filling Other Bottle
-        private void fillup(float fillamounttoadd)
+        private void Fillupwp(float fillamounttoadd)
         {
-            print(fillamounttoadd);
-            bottlemaskobject.material.SetFloat("_fillamount", bottlemaskobject.material.GetFloat("_fillamount")+fillamounttoadd);
+            //print(fillamounttoadd);
+            bottlemaskobjectwp.material.SetFloat("_fillamount", bottlemaskobjectwp.material.GetFloat("_fillamount")+fillamounttoadd);
         }
-        void setotherbottleexactcolorvalue()
+        void Setotherbottleexactcolorvaluewp()
         {
        
-            otherbottlecontrollerref.bottlemaskobject.material.SetFloat("_fillamount", otherbottlecontrollerref.fillamounts[otherbottlecontrollerref.numberofcolorsinbottle]);
+            otherbottlecontrollerrefwp.bottlemaskobjectwp.material.SetFloat("_fillamount", otherbottlecontrollerrefwp.fillamountswp[otherbottlecontrollerrefwp.numberofcolorsinbottlewp]);
             /*
                 for (int i=0;i< otherbottlecontrollerref.fillamounts.Length; i++)
                 {
@@ -474,21 +461,20 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
         }
 
         //for rotating position and transform
-        private void choserotationpointanddirection()
+        private void Choserotationpointanddirectionwp()
         {
-            if (transform.position.x > otherbottlecontrollerref.transform.position.x)
+            if (transform.position.x > otherbottlecontrollerrefwp.transform.position.x)
             {
-                choosenrotationpoint = leftrotationpoint;
-                directionalmultiplayer = -1.0f;
+                choosenrotationpointwp = leftrotationpointwp;
+                directionalmultiplayerwp = -1.0f;
             }
             else
             {
-                choosenrotationpoint = rightrotationpoint;
-                directionalmultiplayer = 1.0f;
+                choosenrotationpointwp = rightrotationpointwp;
+                directionalmultiplayerwp = 1.0f;
             }
 
         }
         
-
     }
 }

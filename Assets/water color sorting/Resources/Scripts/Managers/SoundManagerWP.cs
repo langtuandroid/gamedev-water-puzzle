@@ -36,7 +36,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
 
         public void SetSoundState()
         {
-            if (SaveDataManagerwp.instance.Getsoundsvalue()==1)
+            if (SaveDataManagerwp.instancewp.Getsoundsvaluewp()==1)
             {
                 SoundSourcewp.mute = false;
             }
@@ -47,7 +47,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
         }
         public void SetMusicState()
         {
-            if (SaveDataManagerwp.instance.Getmusicsvalue() == 1)
+            if (SaveDataManagerwp.instancewp.Getmusicsvaluewp() == 1)
             {
                 MusicSourcewp.mute = false;
             }
@@ -58,7 +58,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
         }
         public void SetVibarationState()
         {
-            if (SaveDataManagerwp.instance.Getvibrationsvalue() == 1)
+            if (SaveDataManagerwp.instancewp.Getvibrationsvaluewp() == 1)
             {
                 Handheld.Vibrate();
             }

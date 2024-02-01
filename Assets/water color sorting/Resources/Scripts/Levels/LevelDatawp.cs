@@ -2,7 +2,7 @@
 
 
 [System.Serializable]
-public class TotalBottles
+public class TotalBottleswp
 {
     public string Name;
     [Tooltip("Enter Value of Total Colors In bottles from 0 to 4")]
@@ -10,13 +10,13 @@ public class TotalBottles
 }
 
 [System.Serializable]
-public class LevelData 
+public class LevelDatawp 
 {
     public string Levelname;
     [Range(0, 16)]
     public int FillingBottles;
 
-    public TotalBottles[] TotalNumberofBottles;
+    public TotalBottleswp[] TotalNumberofBottles;
     
  
    

@@ -7208,7 +7208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2069880685}
         m_TargetAssemblyTypeName: 
-        m_MethodName: SetMusic
+        m_MethodName: SetMusicwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9238,7 +9238,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2069880685}
         m_TargetAssemblyTypeName: 
-        m_MethodName: SetVibration
+        m_MethodName: SetVibrationwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21070,7 +21070,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2069880685}
         m_TargetAssemblyTypeName: 
-        m_MethodName: OnPLayGame
+        m_MethodName: PLayGamewp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21236,7 +21236,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2069880685}
         m_TargetAssemblyTypeName: 
-        m_MethodName: SetSound
+        m_MethodName: SetSoundwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

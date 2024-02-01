@@ -6,7 +6,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
     public class LevelsEditor : ScriptableObject
     {
         [SerializeField]
-        public LevelData[] Levels;
+        public LevelDatawp[] Levels;
     
     }
 }
