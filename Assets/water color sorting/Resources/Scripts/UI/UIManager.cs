@@ -1,31 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using NativeShareNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using water_color_sorting.Resources.Scripts;
+using UnityEngine.Serialization;
+using water_color_sorting.Resources.Scripts.Levels;
+using water_color_sorting.Resources.Scripts.Managers;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance = null;
 
+    public Text levelnowp;
+    [FormerlySerializedAs("gameplaybg")] public Sprite[] GameplayBgwp;
+    [FormerlySerializedAs("background")] public SpriteRenderer backgroundwp;
 
-    public Text levelno;
+    [FormerlySerializedAs("LevelComplete")] public GameObject LevelCompletewp;
+    [FormerlySerializedAs("pausebox")] public GameObject PausePanelwp;
 
-    public Sprite[] gameplaybg;
-    public SpriteRenderer background;
-    public GameObject WatchtubeAd, WatchHintAd;
-   
-    public GameObject LevelComplete;
-    public GameObject pausebox;
+    [FormerlySerializedAs("hint")] public GameObject Hintwp;
+    [FormerlySerializedAs("AddTube")] public GameObject AddTubewp;
 
-    public GameObject hint;
-    public GameObject AddTube;
+    [FormerlySerializedAs("CoinsValue")] public Text CoinsValuewp;
+    int coinvaluewp;
 
-    public Text CoinsValue;
-    int coinvalue;
-
-    void Awake()
+    private void Awake()
     {
         if (instance == null)
         {
@@ -36,46 +34,40 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Start()
     {
-        Time.timeScale = 1f;  
-        background.sprite  = gameplaybg[PlayerPrefs.GetInt("backgroundvalue", 0)];
+        Time.timeScale = 1f;
+        backgroundwp.sprite  = GameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
 
-        coinvalue = SaveDataManager.instance.Getcoinsvalue();
-        CoinsValue.text = coinvalue.ToString();
-        SaveDataManager.instance.SetcoinsValue(coinvalue);
-        levelno.text = "Level : " + SaveDataManager.instance.Getlevelsvalue();
+        coinvaluewp = SaveDataManagerwp.instance.Getcoinsvalue();
+        CoinsValuewp.text = coinvaluewp.ToString();
+        SaveDataManagerwp.instance.SetcoinsValue(coinvaluewp);
+        levelnowp.text = "Level : " + SaveDataManagerwp.instance.Getlevelsvalue();
         //Set hint value
 
-        Setaddtubeandhintvalue();
-        if (SaveDataManager.instance.Getlevelsvalue() > 2)
+        SetTubeandHintwp();
+        if (SaveDataManagerwp.instance.Getlevelsvalue() > 2)
         {
-            AddTube.SetActive(true);
+            AddTubewp.SetActive(true);
         }
-        if (SaveDataManager.instance.Getlevelsvalue() > 2)
+        if (SaveDataManagerwp.instance.Getlevelsvalue() > 2)
         {
-            AddTube.SetActive(true);
-            hint.SetActive(true);
+            AddTubewp.SetActive(true);
+            Hintwp.SetActive(true);
         }
-
-
-
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        CoinsValue.text = SaveDataManager.instance.Getcoinsvalue().ToString();
+        CoinsValuewp.text = SaveDataManagerwp.instance.Getcoinsvalue().ToString();
     }
 
 
-    public void Setaddtubeandhintvalue()
+    public void SetTubeandHintwp()
     {
-        AddTube.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManager.instance.Gettubevalue().ToString();
-        hint.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManager.instance.Gethintvalue().ToString();
+        AddTubewp.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManagerwp.instance.Gettubevalue().ToString();
+        Hintwp.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManagerwp.instance.Gethintvalue().ToString();
         // if (prefmanager.instance.Gettubevalue() == 0)
         // {
         //     AddTube.transform.GetChild(1).gameObject.SetActive(false);
@@ -101,80 +93,74 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void SkipLevel()
+    public void SkipLevelwp()
     {
-
-        int levelvalue = SaveDataManager.instance.Getlevelsvalue();
-       
-            levelvalue++;
-            SaveDataManager.instance.Setlevelsvalue(levelvalue);
-
-          SceneManager.LoadScene("LevelSelection");
-
-        
-
-
-
+        int levelvalue = SaveDataManagerwp.instance.Getlevelsvalue();
+        levelvalue++;
+        SaveDataManagerwp.instance.Setlevelsvalue(levelvalue);
+        SceneManager.LoadScene("LevelSelection");
     }
 
-
-
-    public void LevelCompelete()
+    public void LevelCompeletewp()
     {
-        LevelComplete.gameObject.SetActive(true);
-        AddExtraHint();
-        AddExtraTube();
+        LevelCompletewp.gameObject.SetActive(true);
+        AddExtraHintwp();
+        AddExtraTubewp();
     }
 
-    private void AddExtraHint()
+    private void AddExtraHintwp()
     {
-        int value = SaveDataManager.instance.Gethintvalue();
-        value++;
-        SaveDataManager.instance.SetHintValue(value);
+        int value = SaveDataManagerwp.instance.Gethintvalue();
+        if (value < 3)
+        {
+            value++;
+            SaveDataManagerwp.instance.SetHintValue(value);
+        }
     }
     
-    private void AddExtraTube()
+    private void AddExtraTubewp()
     {
-        int value = SaveDataManager.instance.Gettubevalue();
-        value++;
-        SaveDataManager.instance.SettubeValue(value);
-        print("Total Value" + value);
+        int value = SaveDataManagerwp.instance.Gettubevalue();
+        if (value < 3)
+        {
+            value++;
+            SaveDataManagerwp.instance.SettubeValue(value);
+        }
     }
          
 
-    public void RetryClick()
+    public void RetryClickwp()
     {
         SceneManager.LoadScene("gameplay");
     }
-    public void pauseClick()
+    public void ShowPausewp()
     {
-        pausebox.gameObject.SetActive(true);
+        PausePanelwp.gameObject.SetActive(true);
     }
-    public void resumeClick()
+    public void Resumewp()
     {
-        pausebox.gameObject.SetActive(false);
+        PausePanelwp.gameObject.SetActive(false);
     }
 
-    public void OnstagClick()
+    public void LoadLevelSelectionwp()
     {
         SceneManager.LoadScene("LevelSelection");
     }
-    public void OnMenuClick()
+    public void LoadMenuwp()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
-
-    public void AddTubeClick()
+    public void AddTubeClickwp()
     {
-        if (SaveDataManager.instance.Gettubevalue() > 0)
+        if (SaveDataManagerwp.instance.Gettubevalue() > 0)
         {
-            LevelContainer.instance.Addcube();
-            int value = SaveDataManager.instance.Gettubevalue();
+            LevelContainerwp.instance.Addcubewp();
+            int value = SaveDataManagerwp.instance.Gettubevalue();
             value--;
             print("Total Value" + value);
-            SaveDataManager.instance.SettubeValue(value);
-            Setaddtubeandhintvalue();
+            SaveDataManagerwp.instance.SettubeValue(value);
+            SetTubeandHintwp();
         }
         else
         {
@@ -185,42 +171,31 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void HintClick()
+    public void HintClickwp()
     {
-        if (SaveDataManager.instance.Gethintvalue() > 0)
+        if (SaveDataManagerwp.instance.Gethintvalue() > 0)
         {
-            hint.gameObject.GetComponent<Button>().interactable = false;
-            LevelContainer.instance.OnHintClick();
-            int value = SaveDataManager.instance.Gethintvalue();
+            Hintwp.gameObject.GetComponent<Button>().interactable = false;
+            LevelContainerwp.instance.OnHintClickwp();
+            int value = SaveDataManagerwp.instance.Gethintvalue();
             value--;
-            SaveDataManager.instance.SetHintValue(value);
-            Setaddtubeandhintvalue();
+            SaveDataManagerwp.instance.SetHintValue(value);
+            SetTubeandHintwp();
         }
         else
         {
             // Enable Hint Offer for User
             print("HintClick  No Hint");
             //WatchHintAd.gameObject.SetActive(true);
-
         }
-
-        
     }
 
-
-
-
-    public void MakeHintButtoninteractable()
+    public void MakeHintButtoninteractablewp()
     {
-        hint.gameObject.GetComponent<Button>().interactable = true;
+        Hintwp.gameObject.GetComponent<Button>().interactable = true;
     }
-    public void stopHintButtoninteractable()
+    public void StopHintButtoninteractablewp()
     {
-        hint.gameObject.GetComponent<Button>().interactable = false;
+        Hintwp.gameObject.GetComponent<Button>().interactable = false;
     }
-
-
-
-
-
 }

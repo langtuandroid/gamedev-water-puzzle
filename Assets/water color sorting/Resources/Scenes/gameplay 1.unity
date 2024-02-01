@@ -1683,7 +1683,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: OnMenuClick
+        m_MethodName: LoadMenuwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2265,7 +2265,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: HintClick
+        m_MethodName: HintClickwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2677,7 +2677,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: OnMenuClick
+        m_MethodName: LoadMenuwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3255,7 +3255,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: RetryClick
+        m_MethodName: RetryClickwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5998,7 +5998,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: AddTubeClick
+        m_MethodName: AddTubeClickwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6281,7 +6281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: resumeClick
+        m_MethodName: Resumewp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6413,7 +6413,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: OnstagClick
+        m_MethodName: LoadLevelSelectionwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6876,7 +6876,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: OnstagClick
+        m_MethodName: LoadLevelSelectionwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7238,7 +7238,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: RetryClick
+        m_MethodName: RetryClickwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8281,7 +8281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: pauseClick
+        m_MethodName: ShowPausewp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9530,7 +9530,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1714794304}
         m_TargetAssemblyTypeName: 
-        m_MethodName: RetryClick
+        m_MethodName: RetryClickwp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

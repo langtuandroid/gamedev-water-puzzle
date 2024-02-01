@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4439372, g: 0.49315345, b: 0.5721989, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 171456639}
   - component: {fileID: 171456640}
   m_Layer: 0
-  m_Name: prefmanager
+  m_Name: SaveManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1914,7 +1914,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2009,7 +2009,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 924607275}
         m_TargetAssemblyTypeName: 
-        m_MethodName: Onshopbuttonclick
+        m_MethodName: ShowShopwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2295,7 +2295,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3123,8 +3123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2069880685}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 572686240}
+        m_TargetAssemblyTypeName: water_color_sorting.Resources.Scripts.Managers.LinkManager,
+          Assembly-CSharp
         m_MethodName: RateUSToStore
         m_Mode: 1
         m_Arguments:
@@ -3630,7 +3631,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6054,7 +6055,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6287,6 +6288,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565821615}
   m_CullTransparentMesh: 0
+--- !u!114 &572686240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1759054300848935813, guid: dca0e23cf288f47688244bd74a2dcf54,
+    type: 3}
+  m_PrefabInstance: {fileID: 8103772684575847361}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883588d5b2e474c1d888a7b67b4b460c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &587865328
 GameObject:
   m_ObjectHideFlags: 0
@@ -9583,15 +9596,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ac83d94b679194c865aecce4173525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicSource: {fileID: 1830480346}
-  SoundSource: {fileID: 1948555333}
-  Music: {fileID: 8300000, guid: df8ccf33c69dccd4db01eb4426226b71, type: 3}
-  errormessage: {fileID: 8300000, guid: dd549ea34736a1c4f80c79b578db8b40, type: 3}
-  ButtonSound: {fileID: 8300000, guid: d69a9f3b200031647a254ac6137a4507, type: 3}
-  waterdropsound: {fileID: 8300000, guid: 383820f0309aa1f4ab9ca4ce8e4d7ba4, type: 3}
-  levelcompeletesound: {fileID: 8300000, guid: 781c4e207e1fa2d46b39991fb01329d0, type: 3}
-  bottlefillsound: {fileID: 8300000, guid: 99864e6cb2854634daa23cd8bd59df7a, type: 3}
-  confettiparticle: {fileID: 8300000, guid: 13f797706e808c749a15194b309c0c1e, type: 3}
+  MusicSourcewp: {fileID: 1830480346}
+  SoundSourcewp: {fileID: 1948555333}
+  Musicwp: {fileID: 8300000, guid: df8ccf33c69dccd4db01eb4426226b71, type: 3}
+  errormessagewp: {fileID: 8300000, guid: dd549ea34736a1c4f80c79b578db8b40, type: 3}
+  ButtonSoundwp: {fileID: 8300000, guid: d69a9f3b200031647a254ac6137a4507, type: 3}
+  waterdropsoundwp: {fileID: 8300000, guid: 383820f0309aa1f4ab9ca4ce8e4d7ba4, type: 3}
+  levelcompeletesoundwp: {fileID: 8300000, guid: 781c4e207e1fa2d46b39991fb01329d0,
+    type: 3}
+  bottlefillsoundwp: {fileID: 8300000, guid: 383820f0309aa1f4ab9ca4ce8e4d7ba4, type: 3}
+  confettiparticlewp: {fileID: 8300000, guid: 13f797706e808c749a15194b309c0c1e, type: 3}
 --- !u!4 &826015590
 Transform:
   m_ObjectHideFlags: 0
@@ -10250,7 +10264,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12956,7 +12970,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13134,11 +13148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c171b630afb29904c82c0644e7b2b60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hover:
+  hoverswp:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.2066791, g: 1, b: 0, a: 1}
-  CoinsValue: {fileID: 1613195471}
-  bg:
+  CoinsValuewp: {fileID: 1613195471}
+  bgwp:
   - {fileID: 739919725}
   - {fileID: 1850768132}
   - {fileID: 1446896255}
@@ -13147,7 +13161,7 @@ MonoBehaviour:
   - {fileID: 817278184}
   - {fileID: 1385350036}
   - {fileID: 1447547155}
-  Prices: 0000000000000000000000000000000000000000000000000000000000000000
+  Priceswp: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1231312329
 GameObject:
   m_ObjectHideFlags: 0
@@ -13523,7 +13537,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1253968454}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 572686240}
+        m_TargetAssemblyTypeName: water_color_sorting.Resources.Scripts.Managers.LinkManager,
+          Assembly-CSharp
+        m_MethodName: ShareLink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1253968454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14355,7 +14382,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15526,7 +15553,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15789,7 +15816,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16713,7 +16740,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17983,6 +18010,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5722228695361951643, guid: 216fc4ff1df614549921faddb31e0bcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 572686240}
+    - target: {fileID: 5722228695361951643, guid: 216fc4ff1df614549921faddb31e0bcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenPrivacy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722228695361951643, guid: 216fc4ff1df614549921faddb31e0bcc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: water_color_sorting.Resources.Scripts.Managers.LinkManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5722228695457724604, guid: 216fc4ff1df614549921faddb31e0bcc,
         type: 3}
       propertyPath: m_IsActive
@@ -18179,7 +18221,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18470,7 +18512,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18869,7 +18911,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19221,7 +19263,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19730,7 +19772,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19825,7 +19867,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20036,7 +20078,6 @@ GameObject:
   - component: {fileID: 1754891982}
   - component: {fileID: 1754891981}
   - component: {fileID: 1754891980}
-  - component: {fileID: 1754891983}
   - component: {fileID: 1754891984}
   m_Layer: 5
   m_Name: GetRewardedCoins
@@ -20109,19 +20150,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1754891981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1754891983}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnShowrewardedad
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1754891981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20160,18 +20189,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754891978}
   m_CullTransparentMesh: 0
---- !u!114 &1754891983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754891978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585023d417d80c84fa885a1a9ed8d270, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1754891984
 Animator:
   serializedVersion: 5
@@ -20843,7 +20860,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 924607275}
         m_TargetAssemblyTypeName: 
-        m_MethodName: Onshopbuttonclick
+        m_MethodName: ShowShopwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21565,7 +21582,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 924607275}
         m_TargetAssemblyTypeName: 
-        m_MethodName: Onshopbuttonclick
+        m_MethodName: ShowShopwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22304,7 +22321,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1210982417}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22490,7 +22507,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22742,7 +22759,7 @@ GameObject:
   - component: {fileID: 1890828380}
   - component: {fileID: 1890828379}
   m_Layer: 0
-  m_Name: donotdestroyonload
+  m_Name: DonotdestroyOnLoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23907,9 +23924,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2069880685}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ShowPrivacy
+      - m_Target: {fileID: 572686240}
+        m_TargetAssemblyTypeName: water_color_sorting.Resources.Scripts.Managers.LinkManager,
+          Assembly-CSharp
+        m_MethodName: OpenPrivacy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24822,8 +24840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60099d2fbdb390548abc1d13ea2a5906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrivacyPolicywp: https://www.google.com
-  RateUsLink: https://www.google.com
   gameplayBgwp:
   - {fileID: 21300000, guid: 65d8bf1535a843f4395a2db948443355, type: 3}
   - {fileID: 21300000, guid: b529c9bed47d5ff4b95398f46390042e, type: 3}
@@ -25569,7 +25585,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1911739002}
         m_TargetAssemblyTypeName: 
-        m_MethodName: onEquipclick
+        m_MethodName: Equipclickwp
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26156,6 +26172,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143098833}
   m_CullTransparentMesh: 0
+--- !u!1001 &8103772684575847361
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 529986931551706221, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_Name
+      value: LinkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.190666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.750607
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1138.4021
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709625573264691027, guid: dca0e23cf288f47688244bd74a2dcf54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dca0e23cf288f47688244bd74a2dcf54, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -26166,3 +26250,4 @@ SceneRoots:
   - {fileID: 622169449}
   - {fileID: 2069880684}
   - {fileID: 1890828380}
+  - {fileID: 8103772684575847361}
