@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using water_color_sorting.Resources.Scripts.Gameplay;
+using water_color_sorting.Resources.Scripts.UI;
 
 namespace water_color_sorting.Resources.Scripts.Managers
 {
@@ -108,7 +109,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
 
         private void EnableLevelCompeletewp()
         {
-            UIManager.instance.LevelCompeletewp();
+            UIManagerwp.instance.LevelCompeletewp();
         }
     }
 }

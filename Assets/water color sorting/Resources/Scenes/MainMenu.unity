@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 96cbcd8850dbb4320b4de31050f8fc0f,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: b2a990de17c13e2468072ece5516836b,
     type: 2}
 --- !u!196 &4
@@ -10362,15 +10363,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7c7c61be394bc4685f6f24f0809e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopspanel:
+  shopspanelwp:
   - {fileID: 1158247269}
   - {fileID: 485023547}
   - {fileID: 121734659}
-  Shoppanelclickbuttons:
+  Shoppanelclickbuttonswp:
   - {fileID: 187488368}
   - {fileID: 1828894169}
   - {fileID: 1785924235}
-  selectedUnselected:
+  selectedUnselectedwp:
   - {fileID: 21300000, guid: 1bc54792edbddf84da75db269e660220, type: 3}
   - {fileID: 21300000, guid: c21a41e9ba8ee814a905f9dde45f746f, type: 3}
 --- !u!1 &925072622
@@ -23026,11 +23027,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13df3ea3df0d6444f93bdf95895d8440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hover:
+  hoverwp:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.21461558, g: 1, b: 0, a: 1}
-  CoinsValue: {fileID: 1613195471}
-  bg:
+  CoinsValuewp: {fileID: 1613195471}
+  bgwp:
   - {fileID: 1654169653}
   - {fileID: 1722328599}
   - {fileID: 1200457332}
@@ -23042,7 +23043,7 @@ MonoBehaviour:
   - {fileID: 349787748}
   - {fileID: 2109947807}
   - {fileID: 1404086976}
-  Prices: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Priceswp: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &1911739003
 MonoBehaviour:
   m_ObjectHideFlags: 0

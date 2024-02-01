@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 using water_color_sorting.Resources.Scripts.Managers;
 
 namespace water_color_sorting.Resources.Scripts.UI
 {
     public class OnButtonClick : MonoBehaviour
     {
-        [FormerlySerializedAs("buttonvalue")] public int buttonLevelNumber;
+        public int buttonLevelNumber;
         
         public void onPlayclick()
         {
@@ -16,9 +15,9 @@ namespace water_color_sorting.Resources.Scripts.UI
                 PlayerPrefs.SetInt("levelvalue1", buttonLevelNumber);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("GamePlay");
             }
-            else {
+            else
+            {
                 SoundManagerWP.instance.ErrorSoundwp();
-
             }
         }
     }

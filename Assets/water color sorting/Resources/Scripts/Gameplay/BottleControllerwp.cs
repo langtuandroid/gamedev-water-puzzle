@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using water_color_sorting.Resources.Scripts.Levels;
 using water_color_sorting.Resources.Scripts.Managers;
+using water_color_sorting.Resources.Scripts.UI;
 
 namespace water_color_sorting.Resources.Scripts.Gameplay
 {
@@ -78,8 +79,8 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
         {
             normalposition = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            UIManager.instance.Hintwp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = false;
-            UIManager.instance.AddTubewp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            UIManagerwp.instance.Hintwp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            UIManagerwp.instance.AddTubewp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = false;
             ///  SoundManager.instance.MakeVibaration();
             //  otherbottlecontrollerref.GetComponent<BoxCollider2D>().enabled = false;
             Selectedwp = false;
@@ -200,8 +201,8 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             //  normalposition = true;
             transform.GetComponent<SpriteRenderer>().sortingOrder -= 2;
             bottlemaskobjectwp.sortingOrder -= 2;
-            UIManager.instance.Hintwp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = true;
-            UIManager.instance.AddTubewp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = true;
+            UIManagerwp.instance.Hintwp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = true;
+            UIManagerwp.instance.AddTubewp.gameObject.GetComponent<UnityEngine.UI.Button>().interactable = true;
             //  StartCoroutine(RotateBottle());
         }
 

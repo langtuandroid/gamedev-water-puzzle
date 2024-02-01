@@ -2,7 +2,7 @@
 
 namespace water_color_sorting.Resources.Scripts.UI
 {
-    public class BackGroundChanger : MonoBehaviour
+    public class BackGroundChangerwp : MonoBehaviour
     {
         public Sprite[] _bgSpritewp;
         private int _bgIndexwp;
