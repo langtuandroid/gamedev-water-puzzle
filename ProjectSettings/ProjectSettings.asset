@@ -78,6 +78,7 @@ PlayerSettings:
   androidMinimumWindowWidth: 400
   androidMinimumWindowHeight: 300
   androidFullscreenMode: 1
+  androidAutoRotationBehavior: 1
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 1
@@ -286,7 +287,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 44f9fbe821459494bbbb674adebd27b5, type: 3}
+      m_Icon: {fileID: 2800000, guid: 4d861d90095de489e919f52475e886c9, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
