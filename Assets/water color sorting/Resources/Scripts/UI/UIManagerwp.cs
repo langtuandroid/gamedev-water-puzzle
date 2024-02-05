@@ -53,6 +53,8 @@ namespace water_color_sorting.Resources.Scripts.UI
                 AddTubewp.SetActive(true);
                 Hintwp.SetActive(true);
             }
+
+            MakeAddTubewpHintButtoninteractablewp();
         }
     
         private void Update()
@@ -101,6 +103,7 @@ namespace water_color_sorting.Resources.Scripts.UI
         public void LevelCompeletewp()
         {
             LevelCompletewp.gameObject.SetActive(true);
+            StopAddTubewpHintButtoninteractablewp();
             AddExtraHintwp();
             AddExtraTubewp();
         }
@@ -186,13 +189,15 @@ namespace water_color_sorting.Resources.Scripts.UI
             }
         }
 
-        public void MakeHintButtoninteractablewp()
+        public void MakeAddTubewpHintButtoninteractablewp()
         {
             Hintwp.gameObject.GetComponent<Button>().interactable = true;
+            AddTubewp.gameObject.GetComponent<Button>().interactable = true;
         }
-        public void StopHintButtoninteractablewp()
+        public void StopAddTubewpHintButtoninteractablewp()
         {
             Hintwp.gameObject.GetComponent<Button>().interactable = false;
+            AddTubewp.gameObject.GetComponent<Button>().interactable = false;
         }
     }
 }

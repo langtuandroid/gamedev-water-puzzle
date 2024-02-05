@@ -114,8 +114,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
         //Adding a Cube after Watching the Ad
         public void Addcubewp()
         {
-
-     
+            
             GameObject bottle;
             if (TotalBottleswp % 2 == 0)
             {
@@ -123,6 +122,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                 gridvaluewp++;
                 if (gridindex < 8)
                 {
+                    print("gridvaluewp = " + gridvaluewp);
                     print(gridindex);
                
                     bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[0].gameObject.transform.GetChild(gridindex).transform);
@@ -140,7 +140,8 @@ namespace water_color_sorting.Resources.Scripts.Levels
                 gridvaluewp++;
                 if (gridindex < 8)
                 {
-                    //print(gridindex);
+                    print("gridvaluewp22 = " + gridvaluewp);
+                    print(gridindex);
                     bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[1].gameObject.transform.GetChild(gridindex).transform);
                     bottle.transform.position = bottle.transform.parent.position;
                     TotalBottleswp++;

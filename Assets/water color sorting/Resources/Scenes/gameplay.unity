@@ -3245,12 +3245,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2114851951}
   - {fileID: 1049750315}
   - {fileID: 1132711460}
   - {fileID: 1730314233}
   - {fileID: 6774438844539400911}
   - {fileID: 511301180}
+  - {fileID: 2114851951}
   - {fileID: 612593863}
   - {fileID: 1700170440}
   m_Father: {fileID: 337803457}
@@ -4890,7 +4890,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 160, y: 500}
-  m_Spacing: {x: 31, y: 0}
+  m_Spacing: {x: 110, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 8
 --- !u!114 &1295409984
@@ -6995,7 +6995,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 160, y: 500}
-  m_Spacing: {x: 31, y: 0}
+  m_Spacing: {x: 110, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 8
 --- !u!114 &1633521995
@@ -8043,7 +8043,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9267,7 +9267,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114851950}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &6774438844406043889
 GameObject:
   m_ObjectHideFlags: 0
