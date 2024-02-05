@@ -50,7 +50,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                 Destroy(gameObject);
             }
 
-            levelvalue = PlayerPrefs.GetInt("levelvalue1", 1);
+            levelvalue = SaveDataManagerwp.instancewp.GetPresentLevel();
             bottlevalue = PlayerPrefs.GetInt("bottlevalue", 0);
             //for Creating Levels and spwaning Desired Bottles
             CreateLevelwp();

@@ -40,20 +40,20 @@ namespace water_color_sorting.Resources.Scripts.UI
             coinvaluewp = SaveDataManagerwp.instancewp.Getcoinsvaluewp();
             CoinsValuewp.text = coinvaluewp.ToString();
             SaveDataManagerwp.instancewp.SetcoinsValuewp(coinvaluewp);
-            levelnowp.text = "Level : " + SaveDataManagerwp.instancewp.Getlevelsvaluewp();
+            int prsentLevel = SaveDataManagerwp.instancewp.GetPresentLevel();
+            levelnowp.text = "Level : " + prsentLevel;
             //Set hint value
 
             SetTubeandHintwp();
-            if (SaveDataManagerwp.instancewp.Getlevelsvaluewp() > 2)
+            if (prsentLevel > 2)
             {
                 AddTubewp.SetActive(true);
             }
-            if (SaveDataManagerwp.instancewp.Getlevelsvaluewp() > 2)
+            if (prsentLevel > 3)
             {
                 AddTubewp.SetActive(true);
                 Hintwp.SetActive(true);
             }
-
             MakeAddTubewpHintButtoninteractablewp();
         }
     

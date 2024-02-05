@@ -43,6 +43,17 @@ namespace water_color_sorting.Resources.Scripts.Managers
         {
             PlayerPrefs.SetInt("tubepref", value);
         }
+        
+        
+        //for getting and setting preset selected Level
+        public int GetPresentLevel()
+        {
+            return PlayerPrefs.GetInt("levelvalue1", 1);
+        }
+        public void SetPresentLevel(int value)
+        {
+            PlayerPrefs.SetInt("levelvalue1", value);
+        }
 
         //for getting and setting coinsvalue
         public int Getcoinsvaluewp()

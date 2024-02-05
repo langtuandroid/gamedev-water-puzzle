@@ -12,7 +12,7 @@ namespace water_color_sorting.Resources.Scripts.UI
             if (!gameObject.transform.GetChild(1).gameObject.activeInHierarchy)
             {
                 SoundManagerWP.instance.PlayButtonSoundwp();
-                PlayerPrefs.SetInt("levelvalue1", buttonLevelNumber);
+                SaveDataManagerwp.instancewp.SetPresentLevel(buttonLevelNumber);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("GamePlay");
             }
             else
