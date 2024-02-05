@@ -4889,8 +4889,8 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 160, y: 500}
-  m_Spacing: {x: 110, y: 0}
+  m_CellSize: {x: 140, y: 450}
+  m_Spacing: {x: 60, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 8
 --- !u!114 &1295409984
@@ -6994,8 +6994,8 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 160, y: 500}
-  m_Spacing: {x: 110, y: 0}
+  m_CellSize: {x: 140, y: 450}
+  m_Spacing: {x: 60, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 8
 --- !u!114 &1633521995
@@ -7195,14 +7195,23 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0033888863
-        value: 0.13156247
+        time: 0.000869995
+        value: 0.28325644
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.98992443
+        value: 0.11797753
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

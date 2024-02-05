@@ -152,7 +152,8 @@ namespace water_color_sorting.Resources.Scripts.UI
 
         public void AddTubeClickwp()
         {
-            if (SaveDataManagerwp.instancewp.Gettubevaluewp() > 0)
+            int tubevalue = SaveDataManagerwp.instancewp.Gettubevaluewp();
+            if (tubevalue > 0 && tubevalue < 14)
             {
                 LevelContainerwp.instance.Addcubewp();
                 int value = SaveDataManagerwp.instancewp.Gettubevaluewp();

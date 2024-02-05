@@ -245,7 +245,7 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
                         waterdroplinewp.startColor = TopColorwp;
                         waterdroplinewp.endColor = TopColorwp;
                         waterdroplinewp.SetPosition(0, choosenrotationpointwp.position);
-                        waterdroplinewp.SetPosition(1, choosenrotationpointwp.position - Vector3.up*20f);
+                        waterdroplinewp.SetPosition(1, choosenrotationpointwp.position - Vector3.up*15f);
                         waterdroplinewp.enabled = true;
                     }
 

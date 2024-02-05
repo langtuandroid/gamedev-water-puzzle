@@ -107,6 +107,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                     bottleassigningvaluewp++;
                 }
             }
+            Invoke("UpdateAllBottlesPositionswp", 0.1f);
 
         }
 
@@ -154,8 +155,8 @@ namespace water_color_sorting.Resources.Scripts.Levels
             //  print("Total Assigning Value"+bottleassigningvalue);
             if (bottleassigningvaluewp > 12)
             {
-                Gridswp[0].gameObject.GetComponent<GridLayoutGroup>().spacing = new Vector2(5f, 0f);
-                Gridswp[1].gameObject.GetComponent<GridLayoutGroup>().spacing = new Vector2(5f, 0f);
+                Gridswp[0].gameObject.GetComponent<GridLayoutGroup>().spacing = new Vector2(30f, 0f);
+                Gridswp[1].gameObject.GetComponent<GridLayoutGroup>().spacing = new Vector2(30f, 0f);
             }
 
 
