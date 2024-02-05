@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace water_color_sorting.Resources.Scripts.Managers
@@ -8,6 +9,11 @@ namespace water_color_sorting.Resources.Scripts.Managers
         public GameObject[] shopspanelwp;
         public GameObject[] Shoppanelclickbuttonswp;
         public Sprite[] selectedUnselectedwp;
+
+        private void Start()
+        {
+            SelectBgwp();
+        }
 
         private void SelectBgwp()
         {

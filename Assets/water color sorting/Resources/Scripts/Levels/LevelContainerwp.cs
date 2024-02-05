@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using water_color_sorting.Resources.Scripts.Gameplay;
 using water_color_sorting.Resources.Scripts.Managers;
 
@@ -27,7 +26,10 @@ namespace water_color_sorting.Resources.Scripts.Levels
         
         [Header("For Handling Value Where We have to Spawn Bottle")]
         int gridvaluewp = 0;
-        int numberofbottlestoSpawnInFirstGridwp, numberofbottlestoSpawnInSecondGridwp;
+
+        private int numberofbottlestoSpawnInFirstGridwp;
+        private int numberofbottlestoSpawnInSecondGridwp;
+        private int numberofbottlestoSpawnInThirdGridwp;
         bool SpawnInMultipleGridswp;
         int bottleassigningvaluewp=0;
         int TotalBottleswp;
@@ -64,33 +66,158 @@ namespace water_color_sorting.Resources.Scripts.Levels
             SpawnBottleswp();
         }
 
-
-
-        //Spawning Starting Level Bottles
         private void SpawnBottleswp()
         {
-            //print(levelvalue);
-            if (leveldatawp.Levels[levelvalue-1].TotalNumberofBottles.Length > 4)
+            int totalBottles = leveldatawp.Levels[levelvalue - 1].TotalNumberofBottles.Length;
+
+            if (totalBottles < 4)
             {
-                SpawnInMultipleGridswp = true;
-                numberofbottlestoSpawnInFirstGridwp = TotalBottleswp - TotalBottleswp / 2;
-                numberofbottlestoSpawnInSecondGridwp = TotalBottleswp / 2;
+                // Если бутылок меньше 4, все распределяются в первом ряду
+                numberofbottlestoSpawnInFirstGridwp = totalBottles;
+                SpawnInFirstLine();
+            }
+            else if (totalBottles < 12)
+            {
+                // Если бутылок от 4 до 11, они распределяются между первым и вторым рядами
+                int bottlesPerRow = totalBottles / 2;
+                numberofbottlestoSpawnInFirstGridwp = bottlesPerRow;
+                numberofbottlestoSpawnInSecondGridwp = totalBottles - bottlesPerRow;
+                SpawnInFirstAndSecondLine();
             }
             else
             {
-                SpawnInMultipleGridswp = false;
-                numberofbottlestoSpawnInFirstGridwp = TotalBottleswp;
+                // Если бутылок 12 или больше, они распределяются между всеми тремя рядами
+                int bottlesPerRow = totalBottles / 3;
+                int extraBottles = totalBottles % 3;
+
+                numberofbottlestoSpawnInFirstGridwp = bottlesPerRow + (extraBottles >= 1 ? 1 : 0);
+                numberofbottlestoSpawnInSecondGridwp = bottlesPerRow + (extraBottles >= 2 ? 1 : 0);
+                numberofbottlestoSpawnInThirdGridwp = bottlesPerRow;
+
+                SpawnInFirstSecondAndThirdLine();
             }
-
-            DuplicateSelectedBottleswp();
-
-
         }
+        
+        private void SpawnInFirstLine()
+        {
+            GameObject bottle;
+            int rowIndex = 0;
+            for(int i = 0; i < numberofbottlestoSpawnInFirstGridwp; i++)
+            {
+                bottle= Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[rowIndex].gameObject.transform.GetChild(i).transform);
+                Assignbottlepropertieswp(bottle);
+                bottleassigningvaluewp++;
+                bottle.gameObject.transform.parent.gameObject.SetActive(true);
+        
+                // Если достигнут предел бутылок в ряду, переходим на следующий ряд
+                if (i == Gridswp[rowIndex].transform.childCount - 1)
+                {
+                    rowIndex++;
+                    // Проверяем, чтобы не выйти за пределы массива Gridswp
+                    if (rowIndex >= Gridswp.Length)
+                        break;
+                }
+            }
+            Invoke("UpdateAllBottlesPositionswp", 0.1f);
+        }
+        
+        private void SpawnInFirstAndSecondLine()
+        {
+            GameObject bottle;
+            int rowIndex = 0;
+            for (int i = 0; i < numberofbottlestoSpawnInFirstGridwp; i++)
+            {
+                bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[rowIndex].gameObject.transform.GetChild(i).transform);
+                Assignbottlepropertieswp(bottle);
+                bottleassigningvaluewp++;
+                bottle.gameObject.transform.parent.gameObject.SetActive(true);
+        
+                if (i == Gridswp[rowIndex].transform.childCount - 1)
+                {
+                    rowIndex++;
+                    if (rowIndex >= Gridswp.Length)
+                        break;
+                }
+            }
+        
+            rowIndex = 1;
+            for (int i = 0; i < numberofbottlestoSpawnInSecondGridwp; i++)
+            {
+                bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[rowIndex].gameObject.transform.GetChild(i).transform);
+                Assignbottlepropertieswp(bottle);
+                bottleassigningvaluewp++;
+                bottle.gameObject.transform.parent.gameObject.SetActive(true);
+        
+                if (i == Gridswp[rowIndex].transform.childCount - 1)
+                {
+                    rowIndex++;
+                    if (rowIndex >= Gridswp.Length)
+                        break;
+                }
+            }
+        
+            Invoke("UpdateAllBottlesPositionswp", 0.1f);
+        }
+
+        private void SpawnInFirstSecondAndThirdLine()
+        {
+            GameObject bottle;
+            int rowIndex = 0;
+            for (int i = 0; i < numberofbottlestoSpawnInFirstGridwp; i++)
+            {
+                bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[rowIndex].gameObject.transform.GetChild(i).transform);
+                Assignbottlepropertieswp(bottle);
+                bottleassigningvaluewp++;
+                bottle.gameObject.transform.parent.gameObject.SetActive(true);
+        
+                if (i == Gridswp[rowIndex].transform.childCount - 1)
+                {
+                    rowIndex++;
+                    if (rowIndex >= Gridswp.Length)
+                        break;
+                }
+            }
+        
+            rowIndex = 1;
+            for (int i = 0; i < numberofbottlestoSpawnInSecondGridwp; i++)
+            {
+                bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[rowIndex].gameObject.transform.GetChild(i).transform);
+                Assignbottlepropertieswp(bottle);
+                bottleassigningvaluewp++;
+                bottle.gameObject.transform.parent.gameObject.SetActive(true);
+        
+                if (i == Gridswp[rowIndex].transform.childCount - 1)
+                {
+                    rowIndex++;
+                    if (rowIndex >= Gridswp.Length)
+                        break;
+                }
+            }
+        
+            rowIndex = 2;
+            for (int i = 0; i < numberofbottlestoSpawnInThirdGridwp; i++)
+            {
+                bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[rowIndex].gameObject.transform.GetChild(i).transform);
+                Assignbottlepropertieswp(bottle);
+                bottleassigningvaluewp++;
+                bottle.gameObject.transform.parent.gameObject.SetActive(true);
+        
+                if (i == Gridswp[rowIndex].transform.childCount - 1)
+                {
+                    rowIndex++;
+                    if (rowIndex >= Gridswp.Length)
+                        break;
+                }
+            }
+        
+            Invoke("UpdateAllBottlesPositionswp", 0.1f);
+        }
+
 
         private void DuplicateSelectedBottleswp()
         {
             GameObject bottle;
-            for(int i=0;i< numberofbottlestoSpawnInFirstGridwp; i++)
+            for(int i = 0; i < numberofbottlestoSpawnInFirstGridwp; i++)
             {
                 bottle= Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[0].gameObject.transform.GetChild(i).transform);
                 Assignbottlepropertieswp(bottle);
@@ -115,63 +242,65 @@ namespace water_color_sorting.Resources.Scripts.Levels
         //Adding a Cube after Watching the Ad
         public void Addcubewp()
         {
+            GameObject bottle = null;
             
-            GameObject bottle;
-            if (TotalBottleswp % 2 == 0)
-            {
-                int gridindex = TotalBottleswp - TotalBottleswp / 2;
-                gridvaluewp++;
-                if (gridindex < 8)
+                // Проходимся по каждому ряду
+                for (int i = 0; i < Gridswp.Length; i++)
                 {
-                    print("gridvaluewp = " + gridvaluewp);
-                    print(gridindex);
-               
-                    bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[0].gameObject.transform.GetChild(gridindex).transform);
-                    bottle.transform.position = bottle.transform.parent.position;
-                    TotalBottleswp++;
-                    bottleassigningvaluewp++;
-                    bottle.gameObject.transform.parent.gameObject.SetActive(true);
-                    bottle.GetComponent<BottleControllerwp>().waterdroplinewp = LineRendererwp;
+                    // Если в текущем ряду есть свободные слоты, добавляем бутылку в этот ряд
+                    if (GridHasEmptySlot(Gridswp[i].gameObject.transform))
+                    {
+                        // Находим индекс первого свободного слота в ряду
+                        int gridIndex = FindFirstEmptySlotIndex(Gridswp[i].gameObject.transform);
+
+                        // Создаем бутылку и устанавливаем ее в свободный слот
+                        bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[i].gameObject.transform.GetChild(gridIndex).transform);
+                        bottle.transform.position = bottle.transform.parent.position;
+                        bottleassigningvaluewp++;
+                        bottle.gameObject.transform.parent.gameObject.SetActive(true);
+                        bottle.GetComponent<BottleControllerwp>().waterdroplinewp = LineRendererwp;
+
+                        // Увеличиваем счетчик общего количества бутылок
+                        TotalBottleswp++;
+
+                        // Выходим из цикла, так как уже добавили бутылку
+                        break;
+                    }
                 }
-
-            }
-            else
-            {
-                int gridindex = TotalBottleswp / 2;
-                gridvaluewp++;
-                if (gridindex < 8)
-                {
-                    print("gridvaluewp22 = " + gridvaluewp);
-                    print(gridindex);
-                    bottle = Instantiate(Bottledatawp.Bottles[bottlevalue], Gridswp[1].gameObject.transform.GetChild(gridindex).transform);
-                    bottle.transform.position = bottle.transform.parent.position;
-                    TotalBottleswp++;
-                    bottleassigningvaluewp++;
-                    bottle.gameObject.transform.parent.gameObject.SetActive(true);
-                    bottle.GetComponent<BottleControllerwp>().waterdroplinewp = LineRendererwp;
-                }
-            }
-
-            //  print("Total Assigning Value"+bottleassigningvalue);
-            if (bottleassigningvaluewp > 12)
-            {
-                Gridswp[0].gameObject.GetComponent<GridLayoutGroup>().spacing = new Vector2(30f, 0f);
-                Gridswp[1].gameObject.GetComponent<GridLayoutGroup>().spacing = new Vector2(30f, 0f);
-            }
-
-
-            Invoke("UpdateAllBottlesPositionswp", 0.1f);
-
-            // assignbottleproperties(bottle);
-            //  bottleassigningvalue++;
+                Invoke("UpdateAllBottlesPositionswp", 0.1f);
             
         }
 
-        //Update All Bottles Orginal Position After Adding One more bottle
+        // Метод для проверки наличия свободных слотов в ряду
+        private bool GridHasEmptySlot(Transform grid)
+        {
+            for (int i = 0; i < grid.childCount; i++)
+            {
+                if (grid.GetChild(i).childCount == 0) // Если слот пустой
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Метод для поиска индекса первого свободного слота в ряду
+        private int FindFirstEmptySlotIndex(Transform grid)
+        {
+            for (int i = 0; i < grid.childCount; i++)
+            {
+                if (grid.GetChild(i).childCount == 0) // Если слот пустой
+                {
+                    return i;
+                }
+            }
+            return -1; // Возвращаем -1, если свободных слотов не найдено (на всякий случай)
+        }
+        
         private void UpdateAllBottlesPositionswp()
         {
             // GameObject[] Gridbottles;
-            for(int i = 0; i < 2; i++)
+            for(int i = 0; i < 3; i++)
             {
                 int j = 0;
                 //print("Grid Value" + Gridswp[i].transform.childCount);
