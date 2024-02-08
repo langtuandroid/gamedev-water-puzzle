@@ -7,7 +7,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
     public class BackGroundShopManagerwp : MonoBehaviour
     {
         [Header("Selected Unselected Colors")]
-        public Color[] hoverswp;
+        public Sprite[] hoverswp;
 
         public Text CoinsValuewp;
         public GameObject[] bgwp;
@@ -81,8 +81,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
             if (!bgwp[value].gameObject.transform.GetChild(1).gameObject.activeInHierarchy)
             {
                 UnequipallBgwp();
-                bgwp[value].gameObject.transform.parent.gameObject.GetComponent<Image>().color = hoverswp[1];
-
+                bgwp[value].gameObject.transform.GetChild(2).GetComponentInChildren<Image>().sprite = hoverswp[1];
                 PlayerPrefs.SetInt("backgroundvalue", value);
             }
             else
@@ -95,7 +94,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
         {
             for(int i = 0; i < bgwp.Length; i++)
             {
-                bgwp[i].gameObject.transform.parent.gameObject.GetComponent<Image>().color = hoverswp[0];
+                bgwp[i].gameObject.transform.GetChild(2).GetComponentInChildren<Image>().sprite = hoverswp[0];
             }
         }
         

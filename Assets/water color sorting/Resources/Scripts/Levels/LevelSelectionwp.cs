@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using water_color_sorting.Resources.Scripts.Managers;
@@ -44,7 +45,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
             {
                 GameObject button= Instantiate(levelbuttonprefabwp, SpawnAreawp.transform);
                 button.GetComponent<OnButtonClick>().buttonLevelNumber = i;
-                button.transform.GetChild(0).gameObject.GetComponent<Text>().text = i.ToString();
+                button.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = i.ToString();
                 if(i<= levelvaluewp)
                 {
                     button.transform.GetChild(1).gameObject.SetActive(false);

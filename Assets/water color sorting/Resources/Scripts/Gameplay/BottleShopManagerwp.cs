@@ -8,7 +8,7 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
     public class BottleShopManagerwp : MonoBehaviour
     {
         [Header("Selected Unselected Colors")]
-        public Color[] hoverwp;
+        public Sprite[] hoverwp;
 
         public Text CoinsValuewp;
         public GameObject[] bgwp;
@@ -75,7 +75,7 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             if (!bgwp[value].gameObject.transform.GetChild(1).gameObject.activeInHierarchy)
             {
                 UnEquipallBotleswp();
-                bgwp[value].gameObject.GetComponent<Image>().color = hoverwp[1];
+                bgwp[value].GetComponent<Image>().sprite = hoverwp[1];
                 PlayerPrefs.SetInt("bottlevalue", value);
             }
             else
@@ -90,7 +90,7 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
         {
             for(int i = 0; i < bgwp.Length; i++)
             {
-                bgwp[i].gameObject.transform.GetComponent<Image>().color = hoverwp[0];
+                bgwp[i].GetComponent<Image>().sprite = hoverwp[0];
             }
         }
 

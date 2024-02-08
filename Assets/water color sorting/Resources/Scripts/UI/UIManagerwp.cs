@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using water_color_sorting.Resources.Scripts.Levels;
@@ -10,14 +11,14 @@ namespace water_color_sorting.Resources.Scripts.UI
     {
         public static UIManagerwp instance = null;
 
-        public Text levelnowp;
+        public TextMeshProUGUI levelnowp;
         public Sprite[] GameplayBgwp;
-        public SpriteRenderer backgroundwp;
+        public Image backgroundwp;
         public GameObject LevelCompletewp;
         public GameObject PausePanelwp;
         public GameObject Hintwp;
         public GameObject AddTubewp;
-        public Text CoinsValuewp;
+        public TextMeshProUGUI CoinsValuewp;
         int coinvaluewp;
 
         private void Awake()
@@ -41,7 +42,7 @@ namespace water_color_sorting.Resources.Scripts.UI
             CoinsValuewp.text = coinvaluewp.ToString();
             SaveDataManagerwp.instancewp.SetcoinsValuewp(coinvaluewp);
             int prsentLevel = SaveDataManagerwp.instancewp.GetPresentLevel();
-            levelnowp.text = "Level : " + prsentLevel;
+            levelnowp.text = "LEVEL:" + prsentLevel;
             //Set hint value
 
             SetTubeandHintwp();
@@ -57,16 +58,16 @@ namespace water_color_sorting.Resources.Scripts.UI
             MakeAddTubewpHintButtoninteractablewp();
         }
     
-        private void Update()
-        {
-            CoinsValuewp.text = SaveDataManagerwp.instancewp.Getcoinsvaluewp().ToString();
-        }
+        // private void Update()
+        // {
+        //     CoinsValuewp.text = SaveDataManagerwp.instancewp.Getcoinsvaluewp().ToString();
+        // }
 
 
         public void SetTubeandHintwp()
         {
-            AddTubewp.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManagerwp.instancewp.Gettubevaluewp().ToString();
-            Hintwp.transform.GetChild(1).gameObject.GetComponent<Text>().text = SaveDataManagerwp.instancewp.Gethintvaluewp().ToString();
+            AddTubewp.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = SaveDataManagerwp.instancewp.Gettubevaluewp().ToString();
+            Hintwp.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = SaveDataManagerwp.instancewp.Gethintvaluewp().ToString();
             // if (prefmanager.instance.Gettubevalue() == 0)
             // {
             //     AddTube.transform.GetChild(1).gameObject.SetActive(false);
