@@ -554,6 +554,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80004135}
   m_CullTransparentMesh: 0
+--- !u!1 &90208824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90208825}
+  - component: {fileID: 90208827}
+  - component: {fileID: 90208826}
+  m_Layer: 5
+  m_Name: BG (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &90208825
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90208824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 705595320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &90208826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90208824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3d3b41ce65c384ac9867c19e24b2a4b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &90208827
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90208824}
+  m_CullTransparentMesh: 1
 --- !u!1 &90714075
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,7 +6937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44814816, y: 0.7228543}
   m_AnchorMax: {x: 0.44814816, y: 0.7228543}
-  m_AnchoredPosition: {x: 72.69, y: 0.65997314}
+  m_AnchoredPosition: {x: 72.69, y: 0.6599121}
   m_SizeDelta: {x: 797.9, y: 450.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681292348
@@ -7276,6 +7351,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1276883904}
+  - {fileID: 90208825}
   - {fileID: 797578045}
   m_Father: {fileID: 1661246485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22810,7 +22886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60099d2fbdb390548abc1d13ea2a5906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplayBgwp:
+  smartphoneBgwp:
   - {fileID: 21300000, guid: 6fb481c6ff30f47228cdb2891cfc8329, type: 3}
   - {fileID: 21300000, guid: ead3d00193f874375b08c2f7410a4871, type: 3}
   - {fileID: 21300000, guid: 1c993bf351d89448889a33070bde146d, type: 3}
@@ -22821,6 +22897,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d58fb30f9cfa64fa4a1ffe4e604855a3, type: 3}
   - {fileID: 21300000, guid: 51892862a847047a8b8622e1d544ed60, type: 3}
   - {fileID: 21300000, guid: 6db4d47dceb164a7781cf1ab13ffb3d1, type: 3}
+  tabletBgwp:
+  - {fileID: 21300000, guid: 75613bdf5b9b54df29f8e06364b772de, type: 3}
+  - {fileID: 21300000, guid: ce0fbe109f4db479d8dcbe741a2c4d0b, type: 3}
+  - {fileID: 21300000, guid: 35a7db584406e43f4bcc5dc29b8303dd, type: 3}
+  - {fileID: 21300000, guid: ff7896d189932483193165275116ad9f, type: 3}
+  - {fileID: 21300000, guid: f88b9be50750b44ddbdaa82c9357e333, type: 3}
+  - {fileID: 21300000, guid: 2f23d2fb61e7149a4ae728625eae35c3, type: 3}
+  - {fileID: 21300000, guid: 3ecceb4f4776542c89b6aec7751ed590, type: 3}
+  - {fileID: 21300000, guid: ff3b0c5ff314f4bb89ee3c20323ffcbe, type: 3}
+  - {fileID: 21300000, guid: 75d45d0881ba7487096efb252c5207f3, type: 3}
+  - {fileID: 21300000, guid: 3d3b41ce65c384ac9867c19e24b2a4b1, type: 3}
   backgroundwp: {fileID: 1276883906}
   shopBackgroundwp: {fileID: 134539328}
   cointextwp: {fileID: 1613195471}

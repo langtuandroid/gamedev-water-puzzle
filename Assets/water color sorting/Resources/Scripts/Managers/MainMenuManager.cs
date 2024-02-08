@@ -6,7 +6,8 @@ namespace water_color_sorting.Resources.Scripts.Managers
 {
     public class MainMenuManager : MonoBehaviour
     {
-        public Sprite[] gameplayBgwp;
+        public Sprite[] smartphoneBgwp;
+        public Sprite[] tabletBgwp;
         public Image backgroundwp;
         public Image shopBackgroundwp;
         public Text cointextwp;
@@ -22,12 +23,20 @@ namespace water_color_sorting.Resources.Scripts.Managers
             SettingWindowInit();
         }
     
-        private void Update()
+        private void OnEnable()
         {
-            backgroundwp.sprite = gameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
-            shopBackgroundwp.sprite = gameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
-            cointextwp.text = SaveDataManagerwp.instancewp.Getcoinsvaluewp().ToString();
-
+            if (DeviceTypeChecker.CheckDeviceType() is DeviceType.Smartphone)
+            {
+                backgroundwp.sprite = smartphoneBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+                shopBackgroundwp.sprite = smartphoneBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            }
+            else
+            {
+                backgroundwp.sprite = tabletBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+                shopBackgroundwp.sprite = tabletBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            }
+           
+            //cointextwp.text = SaveDataManagerwp.instancewp.Getcoinsvaluewp().ToString();
         }
         public void PLayGamewp()
         {

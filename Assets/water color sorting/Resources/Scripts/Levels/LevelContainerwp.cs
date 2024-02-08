@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using water_color_sorting.Resources.Scripts.Gameplay;
 using water_color_sorting.Resources.Scripts.Managers;
 
@@ -39,7 +40,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
         public GameObject Firstbottlewp;
         public GameObject SecondBottlewp;
         int firstbottlevalueValuewp;
-
+        private Canvas _canvasBottles;
    
         private void Start()
         {
@@ -52,6 +53,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                 Destroy(gameObject);
             }
 
+            _canvasBottles = gameObject.GetComponent<Canvas>();
             levelvalue = SaveDataManagerwp.instancewp.GetPresentLevel();
             bottlevalue = PlayerPrefs.GetInt("bottlevalue", 0);
             //for Creating Levels and spwaning Desired Bottles
@@ -118,7 +120,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                         break;
                 }
             }
-            Invoke("UpdateAllBottlesPositionswp", 0.1f);
+            UpdateAllBottlesPositionswp();
         }
         
         private void SpawnInFirstAndSecondLine()
@@ -156,7 +158,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                 }
             }
         
-            Invoke("UpdateAllBottlesPositionswp", 0.1f);
+            UpdateAllBottlesPositionswp();
         }
 
         private void SpawnInFirstSecondAndThirdLine()
@@ -210,7 +212,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                 }
             }
         
-            Invoke("UpdateAllBottlesPositionswp", 0.1f);
+            UpdateAllBottlesPositionswp();
         }
 
 
@@ -313,6 +315,9 @@ namespace water_color_sorting.Resources.Scripts.Levels
                     }
                 }
             }
+            Canvas.ForceUpdateCanvases();
+            _canvasBottles.gameObject.SetActive(false);
+            _canvasBottles.gameObject.SetActive(true);
         }
 
 
@@ -326,7 +331,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
             bottlesinusewp.Clear();
             
             //  List<GameObject> bottlesinuse = new List<GameObject>();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 int j = 0;
                 //print("Grid Value" + Gridswp[i].transform.childCount);
