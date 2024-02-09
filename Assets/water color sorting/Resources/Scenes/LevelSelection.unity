@@ -435,7 +435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 013494797a6d343d5854a5ca39c56c30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 474d0ba39f4ae4c9990a3f7591abd424, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1194,16 +1194,16 @@ MonoBehaviour:
   levelbuttonprefabwp: {fileID: 9066712520865637785, guid: a8e09afbbe8d87c4a9d7c8a803414827,
     type: 3}
   gameplaybgwp:
-  - {fileID: 21300000, guid: 6fb481c6ff30f47228cdb2891cfc8329, type: 3}
-  - {fileID: 21300000, guid: ead3d00193f874375b08c2f7410a4871, type: 3}
-  - {fileID: 21300000, guid: 1c993bf351d89448889a33070bde146d, type: 3}
-  - {fileID: 21300000, guid: c5beba95b2ee74152bb9b8b031e3561d, type: 3}
-  - {fileID: 21300000, guid: c2b841d5a8824418ebc7f15ce95aeb99, type: 3}
-  - {fileID: 21300000, guid: f3f0f74b3f1a644f2b5d5d9142d24494, type: 3}
-  - {fileID: 21300000, guid: ff1ab61c747ea4413a3fb31ac9b9d2fb, type: 3}
-  - {fileID: 21300000, guid: d58fb30f9cfa64fa4a1ffe4e604855a3, type: 3}
-  - {fileID: 21300000, guid: 51892862a847047a8b8622e1d544ed60, type: 3}
-  - {fileID: 21300000, guid: 6db4d47dceb164a7781cf1ab13ffb3d1, type: 3}
+  - {fileID: 21300000, guid: 474d0ba39f4ae4c9990a3f7591abd424, type: 3}
+  - {fileID: 21300000, guid: 8286d96948521406fa7c6082ee0d6332, type: 3}
+  - {fileID: 21300000, guid: 9fd51fe933b204997a6be39551e1e031, type: 3}
+  - {fileID: 21300000, guid: b036617238bfc402ea9acb515c158715, type: 3}
+  - {fileID: 21300000, guid: 87c60f4cc60a74d73bca42c9653986c6, type: 3}
+  - {fileID: 21300000, guid: 1447fbef8fc714ee595fc1490738f0dd, type: 3}
+  - {fileID: 21300000, guid: e3a2f81ba0b6644aa863695d79a1bd0c, type: 3}
+  - {fileID: 21300000, guid: 0abce9a0d7dbb499abee76b10c14fab8, type: 3}
+  - {fileID: 21300000, guid: 2bc914b4b5fbe4898b6db9cd5315bddb, type: 3}
+  - {fileID: 21300000, guid: 9424ac301bfaf4c248d107ab4034622d, type: 3}
   gameplayTabletbgwp:
   - {fileID: 21300000, guid: 75613bdf5b9b54df29f8e06364b772de, type: 3}
   - {fileID: 21300000, guid: ce0fbe109f4db479d8dcbe741a2c4d0b, type: 3}
