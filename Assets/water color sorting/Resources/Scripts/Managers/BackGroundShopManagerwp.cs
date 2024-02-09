@@ -6,6 +6,8 @@ namespace water_color_sorting.Resources.Scripts.Managers
 {
     public class BackGroundShopManagerwp : MonoBehaviour
     {
+        [SerializeField] 
+        private MainMenuManager _mainMenuManager;
         [Header("Selected Unselected Colors")]
         public Sprite[] hoverswp;
 
@@ -88,6 +90,8 @@ namespace water_color_sorting.Resources.Scripts.Managers
             {
                 Buywp(value);
             }
+
+            _mainMenuManager.SwitchBG();
         }
 
         void UnequipallBgwp()

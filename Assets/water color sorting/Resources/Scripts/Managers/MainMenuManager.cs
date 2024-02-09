@@ -25,6 +25,11 @@ namespace water_color_sorting.Resources.Scripts.Managers
     
         private void OnEnable()
         {
+            SwitchBG();
+        }
+
+        public void SwitchBG()
+        {
             if (DeviceTypeChecker.CheckDeviceType() is DeviceType.Smartphone)
             {
                 backgroundwp.sprite = smartphoneBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];

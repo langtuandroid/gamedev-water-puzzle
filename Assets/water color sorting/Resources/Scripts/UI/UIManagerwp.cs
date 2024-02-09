@@ -13,6 +13,7 @@ namespace water_color_sorting.Resources.Scripts.UI
 
         public TextMeshProUGUI levelnowp;
         public Sprite[] GameplayBgwp;
+        public Sprite[] GameplayTabletBgwp;
         public Image backgroundwp;
         public GameObject LevelCompletewp;
         public GameObject PausePanelwp;
@@ -36,7 +37,15 @@ namespace water_color_sorting.Resources.Scripts.UI
         private void Start()
         {
             Time.timeScale = 1f;
-            backgroundwp.sprite  = GameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+           
+            if (DeviceTypeChecker.CheckDeviceType() is DeviceType.Smartphone)
+            {
+                backgroundwp.sprite  = GameplayBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            }
+            else
+            {
+                backgroundwp.sprite  = GameplayTabletBgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            }
 
             coinvaluewp = SaveDataManagerwp.instancewp.Getcoinsvaluewp();
             CoinsValuewp.text = coinvaluewp.ToString();

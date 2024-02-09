@@ -22,6 +22,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
         public GameObject levelbuttonprefabwp;
 
         public Sprite[] gameplaybgwp;
+        public Sprite[] gameplayTabletbgwp;
         public Image backgroundwp;
     
         private int levelvaluewp;
@@ -29,7 +30,15 @@ namespace water_color_sorting.Resources.Scripts.Levels
          private void Start()
         {
             //  PlayerPrefs.DeleteAll();
-            backgroundwp.sprite = gameplaybgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+          
+            if (DeviceTypeChecker.CheckDeviceType() is DeviceType.Smartphone)
+            {
+                backgroundwp.sprite = gameplaybgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            }
+            else
+            {
+                backgroundwp.sprite = gameplayTabletbgwp[PlayerPrefs.GetInt("backgroundvalue", 0)];
+            }
             levelvaluewp = SaveDataManagerwp.instancewp.Getlevelsvaluewp();
             if (unlockalllevelwp == true)
             {
