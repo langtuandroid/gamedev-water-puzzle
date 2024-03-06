@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3535c76a31d0045889d7ae1078c30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockalllevelwp: 1
+  unlockalllevelwp: 0
   TotalLevelsbuttonswp: 1000
   selectedspritewp: {fileID: 21300000, guid: fc50457266eee41449600595bdedbbd8, type: 3}
   MyScrollRectwp: {fileID: 434098957}

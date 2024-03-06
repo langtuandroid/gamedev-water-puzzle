@@ -3033,7 +3033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &322917276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6937,8 +6937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44814816, y: 0.7228543}
   m_AnchorMax: {x: 0.44814816, y: 0.7228543}
-  m_AnchoredPosition: {x: 72.69, y: 0.6599121}
-  m_SizeDelta: {x: 797.9, y: 450.28}
+  m_AnchoredPosition: {x: 72.69, y: 29}
+  m_SizeDelta: {x: 797.9, y: 747.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681292348
 MonoBehaviour:
@@ -6960,7 +6960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7a974cbeef9f943ec82570b1ad92a314, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8740aafe0a5534f64967ad8ffc207239, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8679,9 +8679,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 797578045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 120, y: 120}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -200, y: -604.8}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879021131
@@ -11539,9 +11539,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 797578045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -120, y: -120}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: -604}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117579753
@@ -12905,7 +12905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1253968451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16246,6 +16246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GDPR
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232427049430808464, guid: 216fc4ff1df614549921faddb31e0bcc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2232427049430808465, guid: 216fc4ff1df614549921faddb31e0bcc,
         type: 3}
@@ -21945,7 +21950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1968581448
 RectTransform:
   m_ObjectHideFlags: 0
