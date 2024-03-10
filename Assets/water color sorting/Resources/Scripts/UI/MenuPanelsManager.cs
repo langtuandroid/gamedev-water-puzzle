@@ -23,10 +23,10 @@ namespace water_color_sorting.Resources.Scripts.UI
         [SerializeField]
         private Button _hideOptionPanel;
 
-        [SerializeField]
-        private Material _uiBgElements;
-        [SerializeField]
-        private Material _uiIconElements;
+        // [SerializeField]
+        // private Material _uiBgElements;
+        // [SerializeField]
+        // private Material _uiIconElements;
 
         private void Awake()
         {
@@ -47,16 +47,16 @@ namespace water_color_sorting.Resources.Scripts.UI
         private void ShowOption()
         {
             _optionPanel.SetActive(true);
-            _uiBgElements.SetFloat(BlurIntensityPropertyName, 0.5f);
-            _uiIconElements.SetFloat(BlurIntensityPropertyName, 1.4f);
+           // _uiBgElements.SetFloat(BlurIntensityPropertyName, 0.5f);
+            //_uiIconElements.SetFloat(BlurIntensityPropertyName, 1.4f);
             
         }
         
         private void HideOption()
         {
             _optionPanel.SetActive(false);
-            _uiBgElements.SetFloat(BlurIntensityPropertyName, 0f);
-            _uiIconElements.SetFloat(BlurIntensityPropertyName, 0f);
+           // _uiBgElements.SetFloat(BlurIntensityPropertyName, 0f);
+            //_uiIconElements.SetFloat(BlurIntensityPropertyName, 0f);
         }
         
         private void ShowShop()
