@@ -9749,8 +9749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leveldatawp: {fileID: 11400000, guid: ff5cb2f586500714bb3d7bd3186151f3, type: 2}
   Bottledatawp: {fileID: 11400000, guid: d54e43b6dac6b114480157679c909c97, type: 2}
-  EmptyBottlewp: {fileID: 6364651399909039089, guid: 8c8a93e946dc5404b9d2219ebb4d2c8d,
-    type: 3}
+  EmptyBottlewp: {fileID: 0}
   Gridswp:
   - {fileID: 1633521992}
   - {fileID: 1295409982}
