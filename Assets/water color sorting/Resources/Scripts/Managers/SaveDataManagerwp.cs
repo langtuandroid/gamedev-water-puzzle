@@ -68,7 +68,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
         //unlock level value container
         public int Getlevelsvaluewp()
         {
-            return PlayerPrefs.GetInt("unlock", 1);
+            return PlayerPrefs.GetInt("unlock", 94);
         }
         public void Setlevelsvaluewp(int value)
         {
