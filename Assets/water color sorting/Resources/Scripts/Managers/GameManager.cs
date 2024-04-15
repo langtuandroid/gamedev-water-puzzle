@@ -7,8 +7,7 @@ namespace water_color_sorting.Resources.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager instance = null;
-        [SerializeField]
-        private  BottleControllerwp firstbottlewp;
+        public  BottleControllerwp firstbottlewp;
         [SerializeField]
         private  BottleControllerwp secondbottlewp;
         public int numberofbottlestofillwp;
@@ -90,7 +89,20 @@ namespace water_color_sorting.Resources.Scripts.Managers
                         }
 
                     }
+                    
                 }
+            }
+        }
+
+        public void ResetSelectedBottle()
+        {
+            if ( firstbottlewp != null)
+            {
+                print("Click");
+                firstbottlewp.GetComponent<BottleControllerwp>().Selectedwp = false;
+                firstbottlewp.GetComponent<BottleControllerwp>().ResetImidiatebottlePosition();
+                firstbottlewp = null;
+                secondbottlewp = null;
             }
         }
 

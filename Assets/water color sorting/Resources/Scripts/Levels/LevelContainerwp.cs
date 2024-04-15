@@ -244,9 +244,9 @@ namespace water_color_sorting.Resources.Scripts.Levels
         //Adding a Cube after Watching the Ad
         public void Addcubewp()
         {
+            GameManager.instance.ResetSelectedBottle();
             GameObject bottle = null;
-            
-                // Проходимся по каждому ряду
+            // Проходимся по каждому ряду
                 for (int i = 0; i < Gridswp.Length; i++)
                 {
                     // Если в текущем ряду есть свободные слоты, добавляем бутылку в этот ряд
@@ -270,6 +270,7 @@ namespace water_color_sorting.Resources.Scripts.Levels
                     }
                 }
                 Invoke("UpdateAllBottlesPositionswp", 0.1f);
+                Invoke("UpdateAllBottlesPositionswp", 0.2f);
             
         }
 
@@ -302,13 +303,12 @@ namespace water_color_sorting.Resources.Scripts.Levels
         private void UpdateAllBottlesPositionswp()
         {
             // GameObject[] Gridbottles;
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < Gridswp.Length; i++)
             {
-                int j = 0;
-                //print("Grid Value" + Gridswp[i].transform.childCount);
-                for (j = 0; j < Gridswp[i].transform.childCount; j++)
+                print("Grid Value" + Gridswp[i].transform.childCount);
+                for (int j = 0; j < Gridswp[i].transform.childCount; j++)
                 {
-                    // print("value of i" + i + " value of j" + j);
+                     print("value of i" + i + " value of j" + j);
                     if (Gridswp[i].gameObject.transform.GetChild(j).gameObject.activeInHierarchy)
                     {
                         Gridswp[i].gameObject.transform.GetChild(j).gameObject.transform.GetChild(0).gameObject.GetComponent<BottleControllerwp>().SetOrginalPositionwp();
@@ -316,12 +316,11 @@ namespace water_color_sorting.Resources.Scripts.Levels
                 }
             }
             Canvas.ForceUpdateCanvases();
-            _canvasBottles.gameObject.SetActive(false);
+            _canvasBottles.gameObject.SetActive(false); 
             _canvasBottles.gameObject.SetActive(true);
+         
         }
-
-
-        //Hint for User Moving Bottle OwnHisOwn
+        
 
         public void OnHintClickwp()
         {

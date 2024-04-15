@@ -55,18 +55,18 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
         private void Start()
         {
             bottlemaskobjectwp.material.SetFloat("_fillamount", fillamountswp[numberofcolorsinbottlewp]);
-
-            Orginalpositionwp =new Vector3( gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+            
             Invoke("SetOrginalPositionwp", 0.1f);
-            //  Orginalposition = transform.position;
-
+            //Orginalpositionwp = transform.position;
             Updatecolorswp();
             UpadteTopColorValueswp();
         }
         public void SetOrginalPositionwp()
         {
+            //Orginalpositionwp = transform.position;
             Orginalpositionwp = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         }
+
         // Update is called once per frame
         void Update()
         {
@@ -125,9 +125,12 @@ namespace water_color_sorting.Resources.Scripts.Gameplay
             }
         }
 
+        public void ResetImidiatebottlePosition()
+        {
+            transform.position = Orginalpositionwp;
+        }
 
-
-        IEnumerator MakeBottleSelectedwp()
+            IEnumerator MakeBottleSelectedwp()
         {
             float t = 0;
             while (t <= 1)
